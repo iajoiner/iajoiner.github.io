@@ -117,7 +117,7 @@ export const HOME: Record<Lang, HomeContent> = {
     ],
     rootsTitle: "Roots",
     roots: [
-      "My Y-chromosome haplogroup is N-L665, a branch of N-P43. I identify as Uralic American: an American with a kinship to the Uralic peoples, the Finns, Estonians, Hungarians, Sámi and their many relatives.",
+      "My Y-chromosome haplogroup is N-L665, a branch of N-P43. I identify as Uralic American: an American with a kinship to the Uralic peoples: the Udmurts, Mari, Khanty, Mansi and Nenets, the Finns, Estonians and Sámi, and their many relatives.",
       "A haplogroup follows only one line among many ancestors, so for me it is a thread of heritage and kinship, not a measure of anyone.",
     ],
   },
@@ -173,7 +173,7 @@ export const HOME: Record<Lang, HomeContent> = {
     ],
     rootsTitle: "Raíces",
     roots: [
-      "Mi haplogrupo del cromosoma Y es N-L665, una rama de N-P43. Me identifico como estadounidense urálico (Uralic American): un estadounidense que siente parentesco con los pueblos urálicos, los finlandeses, los estonios, los húngaros, los sami y sus muchos parientes.",
+      "Mi haplogrupo del cromosoma Y es N-L665, una rama de N-P43. Me identifico como estadounidense urálico (Uralic American): un estadounidense que siente parentesco con los pueblos urálicos: los udmurtos, los maris, los jantis, los mansis y los nénets, los finlandeses, los estonios y los sami, y sus muchos parientes.",
       "Un haplogrupo sigue una sola línea entre muchos antepasados, así que para mí es un hilo de herencia y parentesco, no una medida de nadie.",
     ],
   },
@@ -229,7 +229,7 @@ export const HOME: Record<Lang, HomeContent> = {
     ],
     rootsTitle: "Rötter",
     roots: [
-      "Min Y-kromosomhaplogrupp är N-L665, en gren av N-P43. Jag identifierar mig som uralisk amerikan (Uralic American): en amerikan med släktskap med de uraliska folken, finnar, ester, ungrare, samer och deras många släktingar.",
+      "Min Y-kromosomhaplogrupp är N-L665, en gren av N-P43. Jag identifierar mig som uralisk amerikan (Uralic American): en amerikan med släktskap med de uraliska folken: udmurter, marier, chanter, mansier och nentser, finnar, ester och samer, och deras många släktingar.",
       "En haplogrupp följer bara en linje bland många förfäder, så för mig är den en tråd av arv och släktskap, inte ett mått på någon.",
     ],
   },
@@ -285,7 +285,7 @@ export const HOME: Record<Lang, HomeContent> = {
     ],
     rootsTitle: "Juuret",
     roots: [
-      "Y-kromosomihaploryhmäni on N-L665, joka on N-P43:n haara. Koen olevani uralilainen amerikkalainen (Uralic American): amerikkalainen, joka tuntee sukulaisuutta uralilaisiin kansoihin, suomalaisiin, virolaisiin, unkarilaisiin, saamelaisiin ja heidän moniin sukulaiskansoihinsa.",
+      "Y-kromosomihaploryhmäni on N-L665, joka on N-P43:n haara. Koen olevani uralilainen amerikkalainen (Uralic American): amerikkalainen, joka tuntee sukulaisuutta uralilaisiin kansoihin: udmurtteihin, mareihin, hanteihin, manseihin ja nenetseihin, suomalaisiin, virolaisiin ja saamelaisiin sekä heidän moniin sukulaiskansoihinsa.",
       "Haploryhmä seuraa vain yhtä linjaa monien esivanhempien joukossa, joten minulle se on perinnön ja sukulaisuuden lanka, ei kenenkään mittapuu.",
     ],
   },

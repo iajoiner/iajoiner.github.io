@@ -1,15 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="A cat">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="A kitty wearing a cross">
   <circle cx="60" cy="60" r="60" fill="#0b4ea2"/>
   <!-- head and ears -->
-  <path d="M28 40 L34 14 L52 32 Q60 30 68 32 L86 14 L92 40 Q98 54 96 66 Q92 94 60 96 Q28 94 24 66 Q22 54 28 40 Z" fill="#fff"/>
-  <path d="M36 22 L40 34 L46 30 Z M84 22 L80 34 L74 30 Z" fill="#cfe0f7"/>
+  <path d="M28 36 L34 10 L52 28 Q60 26 68 28 L86 10 L92 36 Q98 50 96 62 Q92 88 60 90 Q28 88 24 62 Q22 50 28 36 Z" fill="#fff"/>
+  <path d="M36 18 L40 30 L46 26 Z M84 18 L80 30 L74 26 Z" fill="#cfe0f7"/>
   <!-- eyes -->
-  <ellipse cx="46" cy="58" rx="6" ry="8" fill="#0b4ea2"/>
-  <ellipse cx="74" cy="58" rx="6" ry="8" fill="#0b4ea2"/>
-  <circle cx="48" cy="55" r="2" fill="#fff"/>
-  <circle cx="76" cy="55" r="2" fill="#fff"/>
+  <ellipse cx="46" cy="54" rx="6" ry="8" fill="#0b4ea2"/>
+  <ellipse cx="74" cy="54" rx="6" ry="8" fill="#0b4ea2"/>
+  <circle cx="48" cy="51" r="2" fill="#fff"/>
+  <circle cx="76" cy="51" r="2" fill="#fff"/>
   <!-- nose, mouth, whiskers -->
-  <path d="M56 70 L64 70 L60 75 Z" fill="#e58aa0"/>
-  <path d="M60 75 Q60 81 54 81 M60 75 Q60 81 66 81" stroke="#0b4ea2" stroke-width="2" fill="none" stroke-linecap="round"/>
-  <path d="M40 72 L18 68 M40 76 L18 78 M80 72 L102 68 M80 76 L102 78" stroke="#0b4ea2" stroke-width="2" stroke-linecap="round"/>
+  <path d="M56 66 L64 66 L60 71 Z" fill="#e58aa0"/>
+  <path d="M60 71 Q60 77 54 77 M60 71 Q60 77 66 77" stroke="#0b4ea2" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M40 68 L18 64 M40 72 L18 74 M80 68 L102 64 M80 72 L102 74" stroke="#0b4ea2" stroke-width="2" stroke-linecap="round"/>
+  <!-- a cord and a gold cross -->
+  <path d="M42 87 Q60 97 78 87" stroke="#cfe0f7" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <g fill="#f2c14e" stroke="#7a5a10" stroke-width="1.2" stroke-linejoin="round">
+    <path d="M57 93 h6 v6 h6 v5 h-6 v13 h-6 v-13 h-6 v-5 h6 Z"/>
+  </g>
 </svg>
