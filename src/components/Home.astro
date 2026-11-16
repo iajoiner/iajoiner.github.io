@@ -1,7 +1,17 @@
 ---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
 import Base from "../layouts/Base.astro";
-import { HOME, ORGS } from "../i18n/home";
+import Flag from "./Flag.astro";
+import { COUNTRY_FLAGS, FLAG_NAMES, HOME, ORGS, type OrgKey } from "../i18n/home";
 import type { Lang } from "../i18n/languages";
+import coauthored from "../assets/orgs/coauthored.svg";
+import gideon from "../assets/orgs/gideon.svg";
+import haapavesi from "../assets/orgs/haapavesi.svg";
+import lumenary from "../assets/orgs/lumenary.svg";
+import omh from "../assets/orgs/omh.png";
+import pcg from "../assets/orgs/pcg.png";
 
 interface Props {
   lang: Lang;
@@ -9,10 +19,11 @@ interface Props {
 
 const { lang } = Astro.props;
 const h = HOME[lang];
+const ICONS: Record<OrgKey, ImageMetadata> = { gideon, omh, lumenary, pcg, haapavesi, coauthored };
 ---
 
 <Base lang={lang} title="Ian Alexander Joiner" page="home">
-  <section aria-labelledby="name">
+  <section class="hero" aria-labelledby="name">
     <h1 id="name">Ian Alexander Joiner</h1>
     <p class="tagline" lang="en">Christ, Code, Cats.</p>
     {h.taglineGloss && <p class="gloss">{h.taglineGloss}</p>}
@@ -28,7 +39,10 @@ const h = HOME[lang];
       {
         ORGS.map((o) => (
           <li class="card">
-            <h3>{o.name}</h3>
+            <div class="card-head">
+              <Image src={ICONS[o.key]} alt="" width={48} height={48} class="org-icon" />
+              <h3>{o.name}</h3>
+            </div>
             <p>{h.orgs[o.key]}</p>
             <p class="links">
               {o.links.map((l) => (
@@ -45,9 +59,14 @@ const h = HOME[lang];
     <h2 id="countries">{h.countriesTitle}</h2>
     <p>{h.countriesIntro}</p>
     {
-      h.countries.map((c) => (
+      h.countries.map((c, i) => (
         <div class="country">
           <h3>{c.name}</h3>
+          <p class="flags">
+            {(COUNTRY_FLAGS[i] ?? []).map((f) => (
+              <Flag code={f} label={FLAG_NAMES[lang][f]} />
+            ))}
+          </p>
           <ul>
             {c.points.map((p) => (
               <li>{p}</li>

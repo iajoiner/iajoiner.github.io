@@ -1,26 +1,31 @@
 :root {
-  --paper: #fbfaf7;
+  /* Blue and white, like the Finnish flag. */
+  --paper: #ffffff;
+  --tint: #f1f5fc;
   --card: #ffffff;
-  --ink: #1d2230;
-  --muted: #5b6272;
-  --line: #e2ded5;
-  --accent: #1f4e9c; /* a deep Nordic blue */
-  --accent-soft: #e8eef8;
-  --warm: #b4532a; /* a cat's ginger */
+  --ink: #0f2140;
+  --muted: #4a5b78;
+  --line: #d3dff1;
+  --accent: #0b4ea2;
+  --accent-soft: #e6eefa;
+  --band: #0b3d91;
+  --band-ink: #ffffff;
   --radius: 14px;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #14171f;
-    --card: #1b1f2a;
-    --ink: #eceae4;
-    --muted: #a7adba;
-    --line: #2d3342;
-    --accent: #8fb3ff;
-    --accent-soft: #1e2a44;
-    --warm: #f0a070;
+    --paper: #0a1733;
+    --tint: #0e1e40;
+    --card: #10234a;
+    --ink: #eef3fb;
+    --muted: #a9b9d6;
+    --line: #23396a;
+    --accent: #9cc3ff;
+    --accent-soft: #16295a;
+    --band: #06112a;
+    --band-ink: #ffffff;
     color-scheme: dark;
   }
 }
@@ -49,7 +54,7 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--warm);
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -72,8 +77,18 @@ button:focus-visible {
   padding: 0 1rem;
 }
 
-header.site {
-  border-bottom: 1px solid var(--line);
+header.site,
+footer.site {
+  background: var(--band);
+  color: var(--band-ink);
+}
+header.site a,
+footer.site a {
+  color: var(--band-ink);
+}
+header.site a:focus-visible,
+footer.site a:focus-visible {
+  outline-color: var(--band-ink);
 }
 header.site .wrap {
   display: flex;
@@ -86,8 +101,8 @@ header.site .wrap {
 }
 .brand {
   font-weight: 700;
-  color: var(--ink);
   text-decoration: none;
+  letter-spacing: 0.01em;
 }
 nav ul {
   list-style: none;
@@ -130,8 +145,15 @@ h3 {
 .tagline {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--warm);
+  color: var(--accent);
   margin: 0;
+}
+.hero {
+  border-bottom: 4px solid var(--accent);
+  padding-bottom: 1.5rem;
+}
+h2 {
+  color: var(--accent);
 }
 .gloss {
   color: var(--muted);
@@ -157,8 +179,26 @@ h3 {
 .card {
   background: var(--card);
   border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
   border-radius: var(--radius);
   padding: 1.1rem 1.2rem;
+}
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.3rem;
+}
+.card-head h3 {
+  margin: 0;
+}
+.org-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  flex: none;
+  object-fit: contain;
+  background: #fff;
 }
 .card p {
   margin: 0.3rem 0;
@@ -171,9 +211,26 @@ h3 {
 }
 
 .country {
+  background: var(--tint);
   border-left: 4px solid var(--accent);
-  padding: 0.2rem 0 0.2rem 1rem;
-  margin: 1.5rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.9rem 1rem 0.9rem 1.1rem;
+  margin: 1.2rem 0;
+}
+.country h3 {
+  margin: 0;
+}
+.flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0.2rem;
+}
+.flag {
+  height: 24px;
+  width: auto;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(15, 33, 64, 0.25);
 }
 .country ul {
   margin: 0.3rem 0 0;
@@ -227,8 +284,6 @@ h3 {
 }
 
 footer.site {
-  border-top: 1px solid var(--line);
-  color: var(--muted);
   font-size: 0.95rem;
   padding: 1.5rem 0 2.5rem;
 }
@@ -236,8 +291,7 @@ footer.site p {
   margin: 0.4rem 0;
 }
 .mt-note {
-  background: var(--accent-soft);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: var(--radius);
   padding: 0.6rem 0.9rem;
-  color: var(--ink);
 }

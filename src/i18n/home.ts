@@ -1,5 +1,7 @@
 import type { Lang } from "./languages";
 
+export type FlagCode = "dk" | "fi" | "is" | "no" | "se" | "ee" | "pl";
+
 /** The home page's words. English is the original; the other languages are machine translations of it. */
 
 export interface Link {
@@ -13,15 +15,12 @@ export const ORGS = [
   {
     key: "omh",
     name: "Open Mission of Hope (OMH)",
-    links: [{ href: "https://github.com/openmissionofhope", label: "github.com/openmissionofhope" }],
+    links: [{ href: "https://www.openmissionofhope.org", label: "openmissionofhope.org" }],
   },
   {
     key: "lumenary",
     name: "Lumenary",
-    links: [
-      { href: "https://lumenary.academy", label: "lumenary.academy" },
-      { href: "https://thelumenary.org", label: "thelumenary.org" },
-    ],
+    links: [{ href: "https://lumenary.academy", label: "lumenary.academy" }],
   },
   { key: "pcg", name: "Peace Cat Games", links: [{ href: "https://peacecatgames.com", label: "peacecatgames.com" }] },
   {
@@ -33,6 +32,16 @@ export const ORGS = [
 ] as const;
 
 export type OrgKey = (typeof ORGS)[number]["key"];
+
+/** The flags shown with each country section, in the order of `countries` below. */
+export const COUNTRY_FLAGS: FlagCode[][] = [["dk", "fi", "is", "no", "se"], ["ee"], ["pl"]];
+
+export const FLAG_NAMES: Record<Lang, Record<FlagCode, string>> = {
+  en: { dk: "Flag of Denmark", fi: "Flag of Finland", is: "Flag of Iceland", no: "Flag of Norway", se: "Flag of Sweden", ee: "Flag of Estonia", pl: "Flag of Poland" },
+  es: { dk: "Bandera de Dinamarca", fi: "Bandera de Finlandia", is: "Bandera de Islandia", no: "Bandera de Noruega", se: "Bandera de Suecia", ee: "Bandera de Estonia", pl: "Bandera de Polonia" },
+  sv: { dk: "Danmarks flagga", fi: "Finlands flagga", is: "Islands flagga", no: "Norges flagga", se: "Sveriges flagga", ee: "Estlands flagga", pl: "Polens flagga" },
+  fi: { dk: "Tanskan lippu", fi: "Suomen lippu", is: "Islannin lippu", no: "Norjan lippu", se: "Ruotsin lippu", ee: "Viron lippu", pl: "Puolan lippu" },
+};
 
 export interface HomeContent {
   /** A translation of "Christ, Code, Cats", shown under it; empty in English. */
@@ -63,7 +72,7 @@ export const HOME: Record<Lang, HomeContent> = {
         "Honest software for taxes and money: IRS e-filing and more, with prices stated up front and a person behind every product.",
       omh: "A Christian, open-source humanitarian initiative: prayer, knowledge and transparent mercy.",
       lumenary:
-        "Free, open-source, Christian-inspired education, starting with mathematics from counting to graduate level. Its sister project, The Lumenary, studies meaning, consciousness, spirituality and time.",
+        "Free, open-source, Christian-inspired education, starting with mathematics from counting to graduate level.",
       pcg: "Games about peace, starring cats: Nexus, Enhanced Go, Cat Chess, Complex Hearts and the mathematics game Quiver Quest.",
       haapavesi: "AI-assisted research in mathematics and science. Its first result: 3×3 Nexus is a win for the first player.",
       coauthored:
@@ -76,6 +85,7 @@ export const HOME: Record<Lang, HomeContent> = {
         name: "The Nordic countries",
         points: [
           "Sweden's Riksdag gave peasants an estate of their own for over four hundred years, when most of Europe gave farmers no voice at all.",
+          "Sweden never had serfdom, and neither did most of Finland. The exception was Old Finland, the southeast Russia took in the 1700s, where peasants on lands granted to Russian nobles were pushed close to serfdom.",
           "No Nordic country ever chose Nazism or communism for itself, and in 1943 Danes ferried nearly all of Denmark's Jews across the sea to safety in Sweden.",
           "Some of the least corrupt and most peaceful societies on earth.",
           "Housing First in Helsinki: a home first, then help, and homelessness keeps falling.",
@@ -116,7 +126,7 @@ export const HOME: Record<Lang, HomeContent> = {
         "Software honesto para impuestos y dinero: presentación electrónica ante el IRS y más, con precios claros desde el principio y una persona detrás de cada producto.",
       omh: "Una iniciativa humanitaria cristiana y de código abierto: oración, conocimiento y misericordia transparente.",
       lumenary:
-        "Educación gratuita, de código abierto y de inspiración cristiana, empezando por las matemáticas, desde contar hasta el nivel de posgrado. Su proyecto hermano, The Lumenary, estudia el sentido, la conciencia, la espiritualidad y el tiempo.",
+        "Educación gratuita, de código abierto y de inspiración cristiana, empezando por las matemáticas, desde contar hasta el nivel de posgrado.",
       pcg: "Juegos sobre la paz, protagonizados por gatos: Nexus, Enhanced Go, Cat Chess, Complex Hearts y el juego matemático Quiver Quest.",
       haapavesi: "Investigación en matemáticas y ciencias asistida por IA. Su primer resultado: en Nexus 3×3 gana el primer jugador.",
       coauthored:
@@ -129,6 +139,7 @@ export const HOME: Record<Lang, HomeContent> = {
         name: "Los países nórdicos",
         points: [
           "El Riksdag sueco dio a los campesinos su propio estamento durante más de cuatrocientos años, cuando en casi toda Europa los agricultores no tenían voz.",
+          "Suecia nunca tuvo servidumbre, y tampoco la mayor parte de Finlandia. La excepción fue la Vieja Finlandia, el sureste que Rusia tomó en el siglo XVIII, donde los campesinos de las tierras concedidas a nobles rusos quedaron muy cerca de la servidumbre.",
           "Ningún país nórdico eligió nunca por sí mismo el nazismo ni el comunismo, y en 1943 los daneses llevaron por mar a casi todos los judíos de Dinamarca a un lugar seguro en Suecia.",
           "Algunas de las sociedades menos corruptas y más pacíficas del mundo.",
           "Housing First en Helsinki: primero una vivienda, después la ayuda, y el número de personas sin hogar sigue bajando.",
@@ -169,7 +180,7 @@ export const HOME: Record<Lang, HomeContent> = {
         "Ärlig programvara för skatter och pengar: e-deklaration till IRS med mera, med priser som anges från början och en människa bakom varje produkt.",
       omh: "Ett kristet humanitärt initiativ med öppen källkod: bön, kunskap och öppen barmhärtighet.",
       lumenary:
-        "Fri utbildning med öppen källkod och kristen inspiration, med början i matematik från att räkna till forskarnivå. Systerprojektet The Lumenary utforskar mening, medvetande, andlighet och tid.",
+        "Fri utbildning med öppen källkod och kristen inspiration, med början i matematik från att räkna till forskarnivå.",
       pcg: "Spel om fred, med katter i huvudrollerna: Nexus, Enhanced Go, Cat Chess, Complex Hearts och matematikspelet Quiver Quest.",
       haapavesi: "AI-assisterad forskning i matematik och naturvetenskap. Första resultatet: i 3×3-Nexus vinner den som börjar.",
       coauthored:
@@ -182,6 +193,7 @@ export const HOME: Record<Lang, HomeContent> = {
         name: "Norden",
         points: [
           "Sveriges riksdag gav bönderna ett eget stånd i över fyrahundra år, när bönder i större delen av Europa saknade röst.",
+          "Sverige hade aldrig livegenskap, och inte heller större delen av Finland. Undantaget var Gamla Finland, den sydöstra del som Ryssland tog på 1700-talet, där bönderna på jord som skänkts till ryska adelsmän trycktes ned nära livegenskap.",
           "Inget nordiskt land valde någonsin nazism eller kommunism av egen vilja, och 1943 förde danskarna nästan alla Danmarks judar över havet i säkerhet till Sverige.",
           "Några av världens minst korrumperade och mest fredliga samhällen.",
           "Bostad först i Helsingfors: först ett hem, sedan hjälp, och hemlösheten fortsätter att minska.",
@@ -222,7 +234,7 @@ export const HOME: Record<Lang, HomeContent> = {
         "Rehellisiä ohjelmistoja veroihin ja raha-asioihin: sähköinen veroilmoitus Yhdysvaltain verovirastolle (IRS) ja paljon muuta. Hinnat kerrotaan heti alussa, ja jokaisen tuotteen takana on ihminen.",
       omh: "Kristillinen avoimen lähdekoodin humanitaarinen hanke: rukousta, tietoa ja läpinäkyvää laupeutta.",
       lumenary:
-        "Maksutonta, avoimen lähdekoodin ja kristillisen inspiraation opetusta, alkaen matematiikasta laskemisen alkeista jatko-opintotasolle. Sisarhanke The Lumenary tutkii merkitystä, tietoisuutta, hengellisyyttä ja aikaa.",
+        "Maksutonta, avoimen lähdekoodin ja kristillisen inspiraation opetusta, alkaen matematiikasta laskemisen alkeista jatko-opintotasolle.",
       pcg: "Pelejä rauhasta, pääosissa kissat: Nexus, Enhanced Go, Cat Chess, Complex Hearts ja matematiikkapeli Quiver Quest.",
       haapavesi: "Tekoälyavusteista matematiikan ja luonnontieteiden tutkimusta. Ensimmäinen tulos: 3×3-Nexuksessa aloittaja voittaa.",
       coauthored:
@@ -235,6 +247,7 @@ export const HOME: Record<Lang, HomeContent> = {
         name: "Pohjoismaat",
         points: [
           "Ruotsin valtiopäivillä talonpojilla oli oma säätynsä yli neljänsadan vuoden ajan, kun suurimmassa osassa Eurooppaa talonpojilla ei ollut lainkaan ääntä.",
+          "Ruotsissa ei koskaan ollut maaorjuutta, eikä myöskään suurimmassa osassa Suomea. Poikkeus oli Vanha Suomi, Venäjän 1700-luvulla valtaama kaakkoinen alue, jossa venäläisille aatelisille lahjoitettujen maiden talonpojat painettiin lähelle maaorjuutta.",
           "Yksikään Pohjoismaa ei koskaan itse valinnut natsismia eikä kommunismia, ja vuonna 1943 tanskalaiset veivät lähes kaikki Tanskan juutalaiset meren yli turvaan Ruotsiin.",
           "Joitakin maailman vähiten korruptoituneita ja rauhallisimpia yhteiskuntia.",
           "Asunto ensin Helsingissä: ensin koti, sitten apu, ja asunnottomuus vähenee yhä.",
