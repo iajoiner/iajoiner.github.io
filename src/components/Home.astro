@@ -33,7 +33,7 @@ const face = Object.values(faces)[0]?.default ?? drawnCat;
 <Base lang={lang} title="Ian Alexander Joiner" page="home">
   <section class="hero" aria-labelledby="name">
     <div class="hero-head">
-      <Image src={face} alt="" width={128} height={128} class="face" loading="eager" />
+      <Image src={face} alt="" width={128} height={128} densities={[1, 1.5]} class="face" loading="eager" />
       <h1 id="name">Ian Alexander Joiner</h1>
     </div>
     <p class="tagline"><span lang="en">Christ, Code, Cats.</span> <span class="nowrap"><CrossMark /> <Emoji e="🐧" /> <Emoji e="🐈" /></span></p>
