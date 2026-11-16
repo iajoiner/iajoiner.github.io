@@ -36,7 +36,10 @@ Put photos in one of these folders:
 - `src/assets/cats/margaret/`
 - `src/assets/cats/street/` (cats I meet)
 
-The file name becomes the caption, so name them like
+For a caption in every language, add the photo to
+`src/assets/cats/captions.json`, e.g.
+`"street/2024-12-22.jpg": { "en": "Kozy at Fatma's Kozy Korner, New Orleans", "fi": "…" }`.
+Otherwise the file name becomes the caption, so name them like
 `2026-11-16-chloe-on-the-sofa.jpg` (shown as "chloe on the sofa"; the date is
 left out of the caption but sorts the newest first). JPEG, PNG, WebP and AVIF
 work. The build makes small copies for the gallery and a larger one for

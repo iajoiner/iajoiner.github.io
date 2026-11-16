@@ -6,6 +6,7 @@ import Base from "../layouts/Base.astro";
 import Emoji from "./Emoji.astro";
 import type { Lang } from "../i18n/languages";
 import { STRINGS } from "../i18n/strings";
+import captions from "../assets/cats/captions.json";
 
 interface Props {
   lang: Lang;
@@ -16,9 +17,11 @@ const t = STRINGS[lang].cats;
 
 /**
  * Every photo in src/assets/cats/<folder>/ is shown, newest file name first.
- * The caption is the file name with dashes as spaces, without its extension
- * and without a leading date: "2026-11-16-chloe-on-the-sofa.jpg" is
- * "chloe on the sofa". See README.md.
+ * A caption comes from captions.json ("<folder>/<file>": { en, es, sv, fi }) if
+ * the photo has one there; otherwise it is the file name with dashes as
+ * spaces, without its extension and without a leading date (and a "-2"
+ * after it): "2026-11-16-chloe-on-the-sofa.jpg" is "chloe on the sofa",
+ * and "2026-11-16.jpg" has none. See README.md.
  */
 const files = import.meta.glob<{ default: ImageMetadata }>("../assets/cats/*/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}", {
   eager: true,
@@ -30,9 +33,10 @@ async function photosIn(folder: string) {
     .sort(([a], [b]) => b.localeCompare(a))
     .map(([path, mod]) => {
       const file = path.split("/").at(-1) ?? "";
-      const caption = file
+      const given = (captions as Record<string, Partial<Record<Lang, string>>>)[`${folder}/${file}`];
+      const caption = given?.[lang] ?? given?.en ?? file
         .replace(/\.[^.]+$/, "")
-        .replace(/^\d{4}-\d{2}-\d{2}-?/, "")
+        .replace(/^\d{4}-\d{2}-\d{2}(-\d+)?-?/, "")
         .replace(/[-_]+/g, " ")
         .trim();
       return { src: mod.default, caption };
