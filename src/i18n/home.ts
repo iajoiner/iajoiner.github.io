@@ -98,7 +98,7 @@ export const HOME: Record<Lang, HomeContent> = {
           "I spent two weeks in Finland, from Helsinki and Vantaa up to Haapavesi, Oulu and Tornio. Very nice, clean and quiet. I love Hesburger, Fazer, lohikeitto and salmiakki, even Tyrkisk Peber.",
         points: [
           "Sweden's Riksdag gave peasants an estate of their own for over four hundred years, when most of Europe gave farmers no voice at all.",
-          "Sweden never had serfdom, and neither did most of Finland. The exception was Old Finland, the southeast Russia took in the 1700s, where peasants on lands granted to Russian nobles were pushed close to serfdom.",
+          "Sweden never had serfdom, and neither did most of Finland. The exception was Old Finland (Vanha Suomi), the southeast Russia took in the 1700s, where peasants on lands granted to Russian nobles were pushed close to serfdom.",
           "No Nordic country ever chose Nazism or communism for itself, and in 1943 Danes ferried nearly all of Denmark's Jews across the sea to safety in Sweden.",
           "Some of the least corrupt and most peaceful societies on earth.",
           "Housing First in Helsinki: a home first, then help, and homelessness keeps falling.",
@@ -116,11 +116,11 @@ export const HOME: Record<Lang, HomeContent> = {
       {
         name: "Poland",
         personal:
-          "I first stayed in Kolbuszowa for a sad visit to the memorial at Bełżec, and found a beautiful, calm, modern Galicia. Later I stayed at Miła 15 in Muranów, visited POLIN and the Palace of Culture and Science (PKiN), and enjoyed Żabka and Biedronka. I love PKP trains and Warsaw's trams.",
+          "I first stayed in Kolbuszowa for a sad visit to the memorial at Bełżec, and found a beautiful, calm, modern Galicja. Later I stayed at Miła 15 in Muranów, visited POLIN and Pałac Kultury i Nauki (PKiN), and enjoyed Żabka and Biedronka. I love PKP trains and the trams of Warszawa.",
         points: [
           "Poles kept their faith in Christ through decades of communist rule imposed from outside.",
-          "Modern Warsaw, crowned by Varso Tower, the tallest building in the European Union.",
-          "The quiet, beautiful countryside of Galicia in southern Poland.",
+          "Modern Warszawa, crowned by Varso Tower, the tallest building in the European Union.",
+          "The quiet, beautiful countryside of Galicja in southern Poland.",
         ],
       },
     ],
@@ -160,7 +160,7 @@ export const HOME: Record<Lang, HomeContent> = {
           "Pasé dos semanas en Finlandia, de Helsinki y Vantaa a Haapavesi, Oulu y Tornio. Muy agradable, limpia y tranquila. Me encantan Hesburger, Fazer, la lohikeitto (sopa de salmón) y el salmiakki, incluso el Tyrkisk Peber.",
         points: [
           "El Riksdag sueco dio a los campesinos su propio estamento durante más de cuatrocientos años, cuando en casi toda Europa los agricultores no tenían voz.",
-          "Suecia nunca tuvo servidumbre, y tampoco la mayor parte de Finlandia. La excepción fue la Vieja Finlandia, el sureste que Rusia tomó en el siglo XVIII, donde los campesinos de las tierras concedidas a nobles rusos quedaron muy cerca de la servidumbre.",
+          "Suecia nunca tuvo servidumbre, y tampoco la mayor parte de Finlandia. La excepción fue la Vieja Finlandia (Vanha Suomi), el sureste que Rusia tomó en el siglo XVIII, donde los campesinos de las tierras concedidas a nobles rusos quedaron muy cerca de la servidumbre.",
           "Ningún país nórdico eligió nunca por sí mismo el nazismo ni el comunismo, y en 1943 los daneses llevaron por mar a casi todos los judíos de Dinamarca a un lugar seguro en Suecia.",
           "Algunas de las sociedades menos corruptas y más pacíficas del mundo.",
           "Housing First en Helsinki: primero una vivienda, después la ayuda, y el número de personas sin hogar sigue bajando.",
@@ -169,20 +169,20 @@ export const HOME: Record<Lang, HomeContent> = {
       {
         name: "Estonia",
         personal:
-          "Fui a Tallin, al café de gatos Nurri, a Nautica y al Keskturg, el mercado central; luego tomé un autobús a Kuressaare y recibí allí el 2023 con gente del lugar.",
+          "Fui a Tallinn, al café de gatos Nurri, a Nautica y al Keskturg, el mercado central; luego tomé un autobús a Kuressaare y recibí allí el 2023 con gente del lugar.",
         points: [
-          "Skype lo construyeron ingenieros estonios, y Bolt nació en Tallin.",
+          "Skype lo construyeron ingenieros estonios, y Bolt nació en Tallinn.",
           "Un Estado verdaderamente digital: una sola tarjeta de identidad para firmar, votar y declarar impuestos por internet, y la e-Residency abierta a todo el mundo.",
         ],
       },
       {
         name: "Polonia",
         personal:
-          "Primero me alojé en Kolbuszowa para una triste visita al memorial de Bełżec, y encontré una Galitzia moderna, hermosa y tranquila. Más tarde me alojé en Miła 15, en Muranów, visité POLIN y el Palacio de la Cultura y la Ciencia (PKiN), y disfruté de Żabka y Biedronka. Me encantan los trenes de PKP y los tranvías de Varsovia.",
+          "Primero me alojé en Kolbuszowa para una triste visita al memorial de Bełżec, y encontré una Galicja moderna, hermosa y tranquila. Más tarde me alojé en Miła 15, en Muranów, visité POLIN y el Pałac Kultury i Nauki (PKiN), y disfruté de Żabka y Biedronka. Me encantan los trenes de PKP y los tranvías de Warszawa.",
         points: [
           "Los polacos conservaron su fe en Cristo durante décadas de un régimen comunista impuesto desde fuera.",
-          "La Varsovia moderna, coronada por la torre Varso, el edificio más alto de la Unión Europea.",
-          "El campo tranquilo y hermoso de Galitzia, en el sur de Polonia.",
+          "La Warszawa moderna, coronada por la torre Varso, el edificio más alto de la Unión Europea.",
+          "El campo tranquilo y hermoso de Galicja, en el sur de Polonia.",
         ],
       },
     ],
@@ -219,10 +219,10 @@ export const HOME: Record<Lang, HomeContent> = {
       {
         name: "Norden",
         personal:
-          "Jag tillbringade två veckor i Finland, från Helsingfors och Vanda upp till Haapavesi, Uleåborg och Torneå. Väldigt trevligt, rent och lugnt. Jag älskar Hesburger, Fazer, laxsoppa och salmiak, till och med Tyrkisk Peber.",
+          "Jag tillbringade två veckor i Finland, från Helsingfors och Vanda upp till Haapavesi, Oulu och Tornio. Väldigt trevligt, rent och lugnt. Jag älskar Hesburger, Fazer, laxsoppa och salmiak, till och med Tyrkisk Peber.",
         points: [
           "Sveriges riksdag gav bönderna ett eget stånd i över fyrahundra år, när bönder i större delen av Europa saknade röst.",
-          "Sverige hade aldrig livegenskap, och inte heller större delen av Finland. Undantaget var Gamla Finland, den sydöstra del som Ryssland tog på 1700-talet, där bönderna på jord som skänkts till ryska adelsmän trycktes ned nära livegenskap.",
+          "Sverige hade aldrig livegenskap, och inte heller större delen av Finland. Undantaget var Gamla Finland (Vanha Suomi), den sydöstra del som Ryssland tog på 1700-talet, där bönderna på jord som skänkts till ryska adelsmän trycktes ned nära livegenskap.",
           "Inget nordiskt land valde någonsin nazism eller kommunism av egen vilja, och 1943 förde danskarna nästan alla Danmarks judar över havet i säkerhet till Sverige.",
           "Några av världens minst korrumperade och mest fredliga samhällen.",
           "Bostad först i Helsingfors: först ett hem, sedan hjälp, och hemlösheten fortsätter att minska.",
@@ -240,11 +240,11 @@ export const HOME: Record<Lang, HomeContent> = {
       {
         name: "Polen",
         personal:
-          "Först bodde jag i Kolbuszowa för ett sorgligt besök vid minnesplatsen i Bełżec, och fann ett vackert, lugnt och modernt Galizien. Senare bodde jag på Miła 15 i Muranów, besökte POLIN och Kultur- och vetenskapspalatset (PKiN), och njöt av Żabka och Biedronka. Jag älskar PKP:s tåg och spårvagnarna i Warszawa.",
+          "Först bodde jag i Kolbuszowa för ett sorgligt besök vid minnesplatsen i Bełżec, och fann ett vackert, lugnt och modernt Galicja. Senare bodde jag på Miła 15 i Muranów, besökte POLIN och Pałac Kultury i Nauki (PKiN), och njöt av Żabka och Biedronka. Jag älskar PKP:s tåg och spårvagnarna i Warszawa.",
         points: [
           "Polackerna höll fast vid sin tro på Kristus genom årtionden av kommunistiskt styre som tvingats på dem utifrån.",
           "Det moderna Warszawa, krönt av Varso Tower, Europeiska unionens högsta byggnad.",
-          "Den lugna, vackra landsbygden i Galizien i södra Polen.",
+          "Den lugna, vackra landsbygden i Galicja i södra Polen.",
         ],
       },
     ],
@@ -302,11 +302,11 @@ export const HOME: Record<Lang, HomeContent> = {
       {
         name: "Puola",
         personal:
-          "Ensin yövyin Kolbuszowassa, kun tein surullisen vierailun Bełżecin muistomerkille, ja löysin kauniin, rauhallisen ja modernin Galitsian. Myöhemmin asuin osoitteessa Miła 15 Muranówissa, kävin POLINissa ja Kulttuuri- ja tiedepalatsissa (PKiN) ja nautin Żabkasta ja Biedronkasta. Rakastan PKP:n junia ja Varsovan raitiovaunuja.",
+          "Ensin yövyin Kolbuszowassa, kun tein surullisen vierailun Bełżecin muistomerkille, ja löysin kauniin, rauhallisen ja modernin Galicjan. Myöhemmin asuin osoitteessa Miła 15 Muranówissa, kävin POLINissa ja Pałac Kultury i Naukissa (PKiN) ja nautin Żabkasta ja Biedronkasta. Rakastan PKP:n junia ja Warszawan raitiovaunuja.",
         points: [
           "Puolalaiset säilyttivät uskonsa Kristukseen vuosikymmenten ajan ulkoa pakotetun kommunistisen vallan alla.",
-          "Moderni Varsova, jonka kruunaa Varso Tower, Euroopan unionin korkein rakennus.",
-          "Galitsian hiljainen ja kaunis maaseutu Etelä-Puolassa.",
+          "Moderni Warszawa, jonka kruunaa Varso Tower, Euroopan unionin korkein rakennus.",
+          "Galicjan hiljainen ja kaunis maaseutu Etelä-Puolassa.",
         ],
       },
     ],
