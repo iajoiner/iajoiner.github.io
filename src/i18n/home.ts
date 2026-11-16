@@ -293,16 +293,16 @@ export const HOME: Record<Lang, HomeContent> = {
       {
         name: "Viro",
         personal:
-          "Kävin Tallinnassa kissakahvila Nurrissa, Nauticassa ja Keskturgilla, keskustorilla. Sitten menin bussilla Kuressaareen ja juhlin siellä uutta vuotta 2023 paikallisten kanssa.",
+          "Kävin Tallinnissa kissakahvila Nurrissa, Nauticassa ja Keskturgilla, keskustorilla. Sitten menin bussilla Kuressaareen ja juhlin siellä uutta vuotta 2023 paikallisten kanssa.",
         points: [
-          "Skypen rakensivat virolaiset insinöörit, ja Bolt perustettiin Tallinnassa.",
+          "Skypen rakensivat virolaiset insinöörit, ja Bolt perustettiin Tallinnissa.",
           "Todella digitaalinen valtio: yhdellä henkilökortilla allekirjoitetaan, äänestetään ja tehdään veroilmoitus verkossa, ja e-residenssi on avoin koko maailmalle.",
         ],
       },
       {
         name: "Puola",
         personal:
-          "Ensin yövyin Kolbuszowassa, kun tein surullisen vierailun Bełżecin muistomerkille, ja löysin kauniin, rauhallisen ja modernin Galicjan. Myöhemmin asuin osoitteessa Miła 15 Muranówissa, kävin POLINissa ja Pałac Kultury i Naukissa (PKiN) ja nautin Żabkasta ja Biedronkasta. Rakastan PKP:n junia ja Warszawan raitiovaunuja.",
+          "Ensin yövyin Kolbuszowassa, kun tein surullisen vierailun Bełżecin muistomerkille, ja löysin kauniin, rauhallisen ja modernin Galicjan. Myöhemmin asuin osoitteessa Miła 15 Muranówissa, kävin POLINissa ja Pałac Kultury i Nauki -palatsissa (PKiN) ja nautin Żabkasta ja Biedronkasta. Rakastan PKP:n junia ja Warszawan raitiovaunuja.",
         points: [
           "Puolalaiset säilyttivät uskonsa Kristukseen vuosikymmenten ajan ulkoa pakotetun kommunistisen vallan alla.",
           "Moderni Warszawa, jonka kruunaa Varso Tower, Euroopan unionin korkein rakennus.",
