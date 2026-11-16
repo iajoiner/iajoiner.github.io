@@ -20,7 +20,10 @@ export const ORGS = [
   {
     key: "lumenary",
     name: "Lumenary",
-    links: [{ href: "https://lumenary.academy", label: "lumenary.academy" }],
+    links: [
+      { href: "https://lumenary.academy", label: "lumenary.academy" },
+      { href: "https://prep.lumenary.academy", label: "prep.lumenary.academy" },
+    ],
   },
   { key: "pcg", name: "Peace Cat Games", links: [{ href: "https://peacecatgames.com", label: "peacecatgames.com" }] },
   {
@@ -72,7 +75,7 @@ export const HOME: Record<Lang, HomeContent> = {
         "Honest software for taxes and money: IRS e-filing and more, with prices stated up front and a person behind every product.",
       omh: "A Christian, open-source humanitarian initiative: prayer, knowledge and transparent mercy.",
       lumenary:
-        "Free, open-source, Christian-inspired education, starting with mathematics from counting to graduate level.",
+        "Lumenary Academy, a Christian-inspired school in three divisions: Lumenary Scientia teaches the sciences, free and open source for ever, starting with mathematics from counting to graduate level; Lumenary Prep is paid exam preparation, one price per course; Lumenary Lingua, for languages, is on the way.",
       pcg: "Games about peace, starring cats: Nexus, Enhanced Go, Cat Chess, Complex Hearts and the mathematics game Quiver Quest.",
       haapavesi: "AI-assisted research in mathematics and science. Its first result: 3×3 Nexus is a win for the first player.",
       coauthored:
@@ -126,7 +129,7 @@ export const HOME: Record<Lang, HomeContent> = {
         "Software honesto para impuestos y dinero: presentación electrónica ante el IRS y más, con precios claros desde el principio y una persona detrás de cada producto.",
       omh: "Una iniciativa humanitaria cristiana y de código abierto: oración, conocimiento y misericordia transparente.",
       lumenary:
-        "Educación gratuita, de código abierto y de inspiración cristiana, empezando por las matemáticas, desde contar hasta el nivel de posgrado.",
+        "Lumenary Academy, una escuela de inspiración cristiana con tres divisiones: Lumenary Scientia enseña las ciencias, gratis y de código abierto para siempre, empezando por las matemáticas, desde contar hasta el nivel de posgrado; Lumenary Prep es preparación de exámenes de pago, con un precio por curso; Lumenary Lingua, para idiomas, está en camino.",
       pcg: "Juegos sobre la paz, protagonizados por gatos: Nexus, Enhanced Go, Cat Chess, Complex Hearts y el juego matemático Quiver Quest.",
       haapavesi: "Investigación en matemáticas y ciencias asistida por IA. Su primer resultado: en Nexus 3×3 gana el primer jugador.",
       coauthored:
@@ -180,7 +183,7 @@ export const HOME: Record<Lang, HomeContent> = {
         "Ärlig programvara för skatter och pengar: e-deklaration till IRS med mera, med priser som anges från början och en människa bakom varje produkt.",
       omh: "Ett kristet humanitärt initiativ med öppen källkod: bön, kunskap och öppen barmhärtighet.",
       lumenary:
-        "Fri utbildning med öppen källkod och kristen inspiration, med början i matematik från att räkna till forskarnivå.",
+        "Lumenary Academy, en kristet inspirerad skola i tre avdelningar: Lumenary Scientia lär ut naturvetenskap, gratis och med öppen källkod för alltid, med början i matematik från att räkna till forskarnivå; Lumenary Prep är betald provförberedelse, ett pris per kurs; Lumenary Lingua, för språk, är på väg.",
       pcg: "Spel om fred, med katter i huvudrollerna: Nexus, Enhanced Go, Cat Chess, Complex Hearts och matematikspelet Quiver Quest.",
       haapavesi: "AI-assisterad forskning i matematik och naturvetenskap. Första resultatet: i 3×3-Nexus vinner den som börjar.",
       coauthored:
@@ -234,7 +237,7 @@ export const HOME: Record<Lang, HomeContent> = {
         "Rehellisiä ohjelmistoja veroihin ja raha-asioihin: sähköinen veroilmoitus Yhdysvaltain verovirastolle (IRS) ja paljon muuta. Hinnat kerrotaan heti alussa, ja jokaisen tuotteen takana on ihminen.",
       omh: "Kristillinen avoimen lähdekoodin humanitaarinen hanke: rukousta, tietoa ja läpinäkyvää laupeutta.",
       lumenary:
-        "Maksutonta, avoimen lähdekoodin ja kristillisen inspiraation opetusta, alkaen matematiikasta laskemisen alkeista jatko-opintotasolle.",
+        "Lumenary Academy, kristillisen inspiraation koulu, jossa on kolme osastoa: Lumenary Scientia opettaa luonnontieteitä maksutta ja avoimena lähdekoodina ikuisesti, alkaen matematiikasta laskemisen alkeista jatko-opintotasolle; Lumenary Prep on maksullista koevalmennusta, yksi hinta kurssia kohden; Lumenary Lingua kielten opetukseen on tulossa.",
       pcg: "Pelejä rauhasta, pääosissa kissat: Nexus, Enhanced Go, Cat Chess, Complex Hearts ja matematiikkapeli Quiver Quest.",
       haapavesi: "Tekoälyavusteista matematiikan ja luonnontieteiden tutkimusta. Ensimmäinen tulos: 3×3-Nexuksessa aloittaja voittaa.",
       coauthored:
