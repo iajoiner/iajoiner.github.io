@@ -5,7 +5,8 @@ const escape = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").rep
 
 /** An RSS feed of the blog, for feed readers. */
 export const GET: APIRoute = async ({ site }) => {
-  const posts = (await getCollection("blog", (p) => !p.data.draft)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  // One item per post, in its original language.
+  const posts = (await getCollection("blog", (p) => !p.data.draft && !p.data.translationOf)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
   const base = site?.toString().replace(/\/$/, "") ?? "";
   const items = posts
     .map((p) => {

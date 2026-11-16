@@ -23,6 +23,7 @@ export interface Strings {
     empty: string;
     all: string;
     writtenIn: Record<Lang, string>;
+    alsoIn: string;
   };
 }
 
@@ -49,6 +50,7 @@ export const STRINGS: Record<Lang, Strings> = {
       empty: "No posts yet.",
       all: "All posts",
       writtenIn: { en: "In English", es: "In Spanish", sv: "In Swedish", fi: "In Finnish" },
+      alsoIn: "Also in",
     },
   },
   es: {
@@ -73,6 +75,7 @@ export const STRINGS: Record<Lang, Strings> = {
       empty: "Todavía no hay entradas.",
       all: "Todas las entradas",
       writtenIn: { en: "En inglés", es: "En español", sv: "En sueco", fi: "En finés" },
+      alsoIn: "También en",
     },
   },
   sv: {
@@ -97,6 +100,7 @@ export const STRINGS: Record<Lang, Strings> = {
       empty: "Inga inlägg än.",
       all: "Alla inlägg",
       writtenIn: { en: "På engelska", es: "På spanska", sv: "På svenska", fi: "På finska" },
+      alsoIn: "Även på",
     },
   },
   fi: {
@@ -121,6 +125,7 @@ export const STRINGS: Record<Lang, Strings> = {
       empty: "Ei vielä kirjoituksia.",
       all: "Kaikki kirjoitukset",
       writtenIn: { en: "Englanniksi", es: "Espanjaksi", sv: "Ruotsiksi", fi: "Suomeksi" },
+      alsoIn: "Myös kielellä",
     },
   },
 };

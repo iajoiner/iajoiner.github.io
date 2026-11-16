@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { forLanguage, publishedPosts } from "../i18n/posts";
 
 import Base from "../layouts/Base.astro";
 import type { Lang } from "../i18n/languages";
@@ -11,7 +11,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = STRINGS[lang].blog;
-const posts = (await getCollection("blog", (p) => !p.data.draft)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const posts = forLanguage(await publishedPosts(), lang);
 const dateFormat = new Intl.DateTimeFormat(lang, { dateStyle: "long", timeZone: "UTC" });
 ---
 

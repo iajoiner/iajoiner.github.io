@@ -9,9 +9,12 @@ interface Props {
   /** Which page this is, for the navigation and the language links; absent on a blog post. */
   page?: Page;
   description?: string;
+  /** On a blog post: the address of each language version, for the language links. */
+  alternates?: Partial<Record<Lang, string>>;
 }
 
-const { lang, title, page, description } = Astro.props;
+const { lang, title, page, description, alternates } = Astro.props;
+const hrefFor = (l: Lang) => alternates?.[l] ?? pathFor(l, page ?? "blog");
 const t = STRINGS[lang];
 const pageTitle = title === "Ian Alexander Joiner" ? title : `${title} · Ian Alexander Joiner`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -28,6 +31,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {page && LANGS.map((l) => <link rel="alternate" hreflang={l} href={new URL(pathFor(l, page), Astro.site)} />)}
     {page && <link rel="alternate" hreflang="x-default" href={new URL(pathFor("en", page), Astro.site)} />}
+    {alternates && Object.entries(alternates).map(([l, href]) => <link rel="alternate" hreflang={l} href={new URL(href, Astro.site)} />)}
     <link rel="alternate" type="application/rss+xml" title="Ian Alexander Joiner: Blog" href="/rss.xml" />
   </head>
   <body>
@@ -61,7 +65,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
             {
               LANGS.map((l) => (
                 <li>
-                  <a href={pathFor(l, page ?? "blog")} lang={l} hreflang={l} aria-current={l === lang ? "true" : undefined}>
+                  <a href={hrefFor(l)} lang={l} hreflang={l} aria-current={l === lang ? "true" : undefined}>
                     {LANG_NAMES[l]}
                   </a>
                 </li>
