@@ -52,6 +52,9 @@ export interface HomeContent {
   /** What "Usko, toivo, rakkaus" means. */
   mottoGloss: string;
   catBro: string;
+  /** Labels for the favourites line: "Rust" and "Linux" are the same in every language. */
+  favLanguage: string;
+  favOs: string;
   intro: string;
   orgsTitle: string;
   orgs: Record<OrgKey, string>;
@@ -67,6 +70,8 @@ export const HOME: Record<Lang, HomeContent> = {
     taglineGloss: "",
     mottoGloss: "Faith, hope, love: 1 Corinthians 13:13, in Finnish.",
     catBro: "Known to my friends, and to every cat on the street, as Cat Bro.",
+    favLanguage: "Favorite programming language",
+    favOs: "Favorite operating system",
     intro:
       "I follow Christ, write code and look after cats. Below are the organizations I work on, the countries close to my heart and my roots. There is also a blog for personal updates and a page of cat photos.",
     orgsTitle: "Organizations",
@@ -121,6 +126,8 @@ export const HOME: Record<Lang, HomeContent> = {
     taglineGloss: "Cristo, código, gatos.",
     mottoGloss: "Fe, esperanza, amor: 1 Corintios 13:13, en finés.",
     catBro: "Mis amigos, y todos los gatos de la calle, me conocen como Cat Bro.",
+    favLanguage: "Lenguaje de programación favorito",
+    favOs: "Sistema operativo favorito",
     intro:
       "Sigo a Cristo, escribo código y cuido gatos. Abajo están las organizaciones en las que trabajo, los países que llevo en el corazón y mis raíces. También hay un blog con novedades personales y una página de fotos de gatos.",
     orgsTitle: "Organizaciones",
@@ -175,6 +182,8 @@ export const HOME: Record<Lang, HomeContent> = {
     taglineGloss: "Kristus, kod, katter.",
     mottoGloss: "Tro, hopp, kärlek: 1 Kor 13:13, på finska.",
     catBro: "Mina vänner, och varenda katt på gatan, känner mig som Cat Bro.",
+    favLanguage: "Favoritprogrammeringsspråk",
+    favOs: "Favoritoperativsystem",
     intro:
       "Jag följer Kristus, skriver kod och tar hand om katter. Här nedanför finns organisationerna jag arbetar med, länderna som ligger mitt hjärta nära och mina rötter. Det finns också en blogg med personliga uppdateringar och en sida med kattbilder.",
     orgsTitle: "Organisationer",
@@ -229,6 +238,8 @@ export const HOME: Record<Lang, HomeContent> = {
     taglineGloss: "Kristus, koodi, kissat.",
     mottoGloss: "1. Kor. 13:13.",
     catBro: "Ystäväni, ja jokainen kadun kissa, tuntevat minut nimellä Cat Bro.",
+    favLanguage: "Lempiohjelmointikieli",
+    favOs: "Lempikäyttöjärjestelmä",
     intro:
       "Seuraan Kristusta, kirjoitan koodia ja pidän huolta kissoista. Alla ovat organisaatiot, joiden parissa työskentelen, sydäntäni lähellä olevat maat ja juureni. Sivustolla on myös blogi henkilökohtaisille kuulumisille ja sivu kissakuville.",
     orgsTitle: "Organisaatiot",
