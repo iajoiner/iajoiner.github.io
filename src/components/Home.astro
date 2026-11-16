@@ -3,6 +3,7 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
 import Base from "../layouts/Base.astro";
+import Emoji from "./Emoji.astro";
 import Flag from "./Flag.astro";
 import { COUNTRY_FLAGS, FLAG_NAMES, HOME, ORGS, type OrgKey } from "../i18n/home";
 import type { Lang } from "../i18n/languages";
@@ -25,12 +26,12 @@ const ICONS: Record<OrgKey, ImageMetadata> = { gideon, omh, lumenary, pcg, haapa
 <Base lang={lang} title="Ian Alexander Joiner" page="home">
   <section class="hero" aria-labelledby="name">
     <h1 id="name">Ian Alexander Joiner</h1>
-    <p class="tagline" lang="en">Christ, Code, Cats.</p>
+    <p class="tagline"><span lang="en">Christ, Code, Cats.</span> <Emoji e="✝️" /> <Emoji e="🐧" /> <Emoji e="🐈" /></p>
     {h.taglineGloss && <p class="gloss">{h.taglineGloss}</p>}
     <p class="motto" lang="fi">Usko, toivo, rakkaus.</p>
     <p class="gloss">{h.mottoGloss}</p>
     <p class="lead">{h.intro}</p>
-    <p>{h.catBro}</p>
+    <p class="catbro"><Emoji e="😺" /> {h.catBro} <Emoji e="🐾" /></p>
   </section>
 
   <section aria-labelledby="orgs">
@@ -79,6 +80,7 @@ const ICONS: Record<OrgKey, ImageMetadata> = { gideon, omh, lumenary, pcg, haapa
 
   <section aria-labelledby="roots">
     <h2 id="roots">{h.rootsTitle}</h2>
+    <p class="flags"><Flag code="us" label={FLAG_NAMES[lang].us} /></p>
     {h.roots.map((r) => <p>{r}</p>)}
   </section>
 </Base>

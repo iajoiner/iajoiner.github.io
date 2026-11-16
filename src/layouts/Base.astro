@@ -34,7 +34,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <a class="skip" href="#main">{t.skip}</a>
     <header class="site">
       <div class="wrap">
-        <a class="brand" href={pathFor(lang, "home")}>Ian Alexander Joiner</a>
+        <a class="brand" href={pathFor(lang, "home")}><span aria-hidden="true">🐈 </span>Ian Alexander Joiner</a>
         <nav aria-label={t.siteNav}>
           <ul>
             {
@@ -69,7 +69,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
             }
           </ul>
         </nav>
-        <p>© {new Date().getFullYear()} Ian Alexander Joiner · <a href="https://github.com/iajoiner">GitHub</a></p>
+        <p>© {new Date().getFullYear()} Ian Alexander Joiner · <a href="https://github.com/iajoiner">GitHub</a> <span aria-hidden="true">😺</span></p>
       </div>
     </footer>
   </body>

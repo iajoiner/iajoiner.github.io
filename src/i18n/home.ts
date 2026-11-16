@@ -1,6 +1,6 @@
 import type { Lang } from "./languages";
 
-export type FlagCode = "dk" | "fi" | "is" | "no" | "se" | "ee" | "pl";
+export type FlagCode = "dk" | "fi" | "is" | "no" | "se" | "ee" | "pl" | "us";
 
 /** The home page's words. English is the original; the other languages are machine translations of it. */
 
@@ -40,10 +40,10 @@ export type OrgKey = (typeof ORGS)[number]["key"];
 export const COUNTRY_FLAGS: FlagCode[][] = [["dk", "fi", "is", "no", "se"], ["ee"], ["pl"]];
 
 export const FLAG_NAMES: Record<Lang, Record<FlagCode, string>> = {
-  en: { dk: "Flag of Denmark", fi: "Flag of Finland", is: "Flag of Iceland", no: "Flag of Norway", se: "Flag of Sweden", ee: "Flag of Estonia", pl: "Flag of Poland" },
-  es: { dk: "Bandera de Dinamarca", fi: "Bandera de Finlandia", is: "Bandera de Islandia", no: "Bandera de Noruega", se: "Bandera de Suecia", ee: "Bandera de Estonia", pl: "Bandera de Polonia" },
-  sv: { dk: "Danmarks flagga", fi: "Finlands flagga", is: "Islands flagga", no: "Norges flagga", se: "Sveriges flagga", ee: "Estlands flagga", pl: "Polens flagga" },
-  fi: { dk: "Tanskan lippu", fi: "Suomen lippu", is: "Islannin lippu", no: "Norjan lippu", se: "Ruotsin lippu", ee: "Viron lippu", pl: "Puolan lippu" },
+  en: { dk: "Flag of Denmark", fi: "Flag of Finland", is: "Flag of Iceland", no: "Flag of Norway", se: "Flag of Sweden", ee: "Flag of Estonia", pl: "Flag of Poland", us: "Flag of the United States" },
+  es: { dk: "Bandera de Dinamarca", fi: "Bandera de Finlandia", is: "Bandera de Islandia", no: "Bandera de Noruega", se: "Bandera de Suecia", ee: "Bandera de Estonia", pl: "Bandera de Polonia", us: "Bandera de Estados Unidos" },
+  sv: { dk: "Danmarks flagga", fi: "Finlands flagga", is: "Islands flagga", no: "Norges flagga", se: "Sveriges flagga", ee: "Estlands flagga", pl: "Polens flagga", us: "USA:s flagga" },
+  fi: { dk: "Tanskan lippu", fi: "Suomen lippu", is: "Islannin lippu", no: "Norjan lippu", se: "Ruotsin lippu", ee: "Viron lippu", pl: "Puolan lippu", us: "Yhdysvaltain lippu" },
 };
 
 export interface HomeContent {

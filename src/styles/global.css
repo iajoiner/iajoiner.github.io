@@ -295,3 +295,11 @@ footer.site p {
   border-radius: var(--radius);
   padding: 0.6rem 0.9rem;
 }
+
+.emoji {
+  font-style: normal;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+.catbro {
+  font-size: 1.1rem;
+}

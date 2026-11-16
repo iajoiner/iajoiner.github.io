@@ -3,6 +3,7 @@ import type { ImageMetadata } from "astro";
 import { getImage, Image } from "astro:assets";
 
 import Base from "../layouts/Base.astro";
+import Emoji from "./Emoji.astro";
 import type { Lang } from "../i18n/languages";
 import { STRINGS } from "../i18n/strings";
 
@@ -43,21 +44,21 @@ async function photosIn(folder: string) {
 }
 
 const sections = [
-  { id: "chloe", title: t.chloe, photos: await photosIn("chloe") },
-  { id: "margaret", title: t.margaret, photos: await photosIn("margaret") },
-  { id: "street", title: t.street, photos: await photosIn("street") },
+  { id: "chloe", title: t.chloe, emoji: "🐱", photos: await photosIn("chloe") },
+  { id: "margaret", title: t.margaret, emoji: "😸", photos: await photosIn("margaret") },
+  { id: "street", title: t.street, emoji: "🐈", photos: await photosIn("street") },
 ];
 ---
 
 <Base lang={lang} title={t.title} page="cats">
-  <h1>{t.title}</h1>
+  <h1>{t.title} <Emoji e="🐾" /></h1>
   <p class="lead">{t.intro}</p>
   {
     sections.map((s) => (
       <section aria-labelledby={s.id}>
-        <h2 id={s.id}>{s.title}</h2>
+        <h2 id={s.id}>{s.title} <Emoji e={s.emoji} /></h2>
         {s.photos.length === 0 ? (
-          <p class="meta">{t.empty}</p>
+          <p class="meta">{t.empty} <Emoji e="😿" /></p>
         ) : (
           <ul class="gallery">
             {s.photos.map((p) => (

@@ -1,0 +1,9 @@
+---
+/** A decorative emoji: hidden from screen readers, which read the words around it. */
+interface Props {
+  e: string;
+}
+const { e } = Astro.props;
+---
+
+<span class="emoji" aria-hidden="true">{e}</span>

@@ -20,7 +20,23 @@ const VIEW: Record<FlagCode, [number, number]> = {
   se: [16, 10],
   ee: [33, 21],
   pl: [8, 5],
+  us: [190, 100],
 };
+
+/** The US flag's 50 stars: nine rows, alternately six and five (official specification, scaled to 190 × 100). */
+function star(cx: number, cy: number, r: number): string {
+  return Array.from({ length: 10 }, (_, i) => {
+    const a = (Math.PI / 5) * i - Math.PI / 2;
+    const d = i % 2 === 0 ? r : r * 0.382;
+    return `${(cx + d * Math.cos(a)).toFixed(2)},${(cy + d * Math.sin(a)).toFixed(2)}`;
+  }).join(" ");
+}
+const usStars =
+  code === "us"
+    ? Array.from({ length: 9 }, (_, row) =>
+        Array.from({ length: row % 2 === 0 ? 6 : 5 }, (_, col) => star((row % 2 === 0 ? 6.3 : 12.6) + col * 12.6, 5.4 + row * 5.4, 3.08)),
+      ).flat()
+    : [];
 const [w, h] = VIEW[code];
 ---
 
@@ -80,6 +96,20 @@ const [w, h] = VIEW[code];
         <rect width="33" height="7" fill="#0072CE" />
         <rect y="7" width="33" height="7" fill="#000" />
         <rect y="14" width="33" height="7" fill="#fff" />
+      </>
+    )
+  }
+  {
+    code === "us" && (
+      <>
+        <rect width="190" height="100" fill="#fff" />
+        {Array.from({ length: 7 }, (_, i) => (
+          <rect y={(i * 200) / 13} width="190" height={100 / 13} fill="#B31942" />
+        ))}
+        <rect width="76" height={700 / 13} fill="#0A3161" />
+        {usStars.map((points) => (
+          <polygon points={points} fill="#fff" />
+        ))}
       </>
     )
   }
