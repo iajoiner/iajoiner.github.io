@@ -1,0 +1,243 @@
+:root {
+  --paper: #fbfaf7;
+  --card: #ffffff;
+  --ink: #1d2230;
+  --muted: #5b6272;
+  --line: #e2ded5;
+  --accent: #1f4e9c; /* a deep Nordic blue */
+  --accent-soft: #e8eef8;
+  --warm: #b4532a; /* a cat's ginger */
+  --radius: 14px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14171f;
+    --card: #1b1f2a;
+    --ink: #eceae4;
+    --muted: #a7adba;
+    --line: #2d3342;
+    --accent: #8fb3ff;
+    --accent-soft: #1e2a44;
+    --warm: #f0a070;
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 18px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--warm);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  background: var(--card);
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+
+.wrap {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header.site {
+  border-bottom: 1px solid var(--line);
+}
+header.site .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+.brand {
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+nav a[aria-current="page"],
+nav a[aria-current="true"] {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+main.wrap {
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+}
+h2 {
+  font-size: 1.6rem;
+  margin: 3rem 0 1rem;
+}
+h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.4rem;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--warm);
+  margin: 0;
+}
+.gloss {
+  color: var(--muted);
+  margin: 0.1rem 0 0;
+}
+.motto {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin: 1rem 0 0;
+}
+.lead {
+  font-size: 1.1rem;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+}
+.card p {
+  margin: 0.3rem 0;
+}
+.card .links a {
+  display: inline-block;
+  max-width: 100%;
+  margin-right: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
+.country {
+  border-left: 4px solid var(--accent);
+  padding: 0.2rem 0 0.2rem 1rem;
+  margin: 1.5rem 0;
+}
+.country ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.2rem;
+}
+.country li {
+  margin: 0.3rem 0;
+}
+
+.posts {
+  list-style: none;
+  padding: 0;
+}
+.posts li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.gallery {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.gallery figure {
+  margin: 0;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+.gallery figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+footer.site {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 1.5rem 0 2.5rem;
+}
+footer.site p {
+  margin: 0.4rem 0;
+}
+.mt-note {
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.9rem;
+  color: var(--ink);
+}

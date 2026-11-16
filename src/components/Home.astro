@@ -1,0 +1,65 @@
+---
+import Base from "../layouts/Base.astro";
+import { HOME, ORGS } from "../i18n/home";
+import type { Lang } from "../i18n/languages";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const h = HOME[lang];
+---
+
+<Base lang={lang} title="Ian Alexander Joiner" page="home">
+  <section aria-labelledby="name">
+    <h1 id="name">Ian Alexander Joiner</h1>
+    <p class="tagline" lang="en">Christ, Code, Cats.</p>
+    {h.taglineGloss && <p class="gloss">{h.taglineGloss}</p>}
+    <p class="motto" lang="fi">Usko, toivo, rakkaus.</p>
+    <p class="gloss">{h.mottoGloss}</p>
+    <p class="lead">{h.intro}</p>
+    <p>{h.catBro}</p>
+  </section>
+
+  <section aria-labelledby="orgs">
+    <h2 id="orgs">{h.orgsTitle}</h2>
+    <ul class="cards">
+      {
+        ORGS.map((o) => (
+          <li class="card">
+            <h3>{o.name}</h3>
+            <p>{h.orgs[o.key]}</p>
+            <p class="links">
+              {o.links.map((l) => (
+                <a href={l.href}>{l.label}</a>
+              ))}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section aria-labelledby="countries">
+    <h2 id="countries">{h.countriesTitle}</h2>
+    <p>{h.countriesIntro}</p>
+    {
+      h.countries.map((c) => (
+        <div class="country">
+          <h3>{c.name}</h3>
+          <ul>
+            {c.points.map((p) => (
+              <li>{p}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+
+  <section aria-labelledby="roots">
+    <h2 id="roots">{h.rootsTitle}</h2>
+    {h.roots.map((r) => <p>{r}</p>)}
+  </section>
+</Base>

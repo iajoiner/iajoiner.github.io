@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from "astro:content";
+
+import Base from "../../layouts/Base.astro";
+import { pathFor } from "../../i18n/languages";
+import { STRINGS } from "../../i18n/strings";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", (p) => !p.data.draft);
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const lang = post.data.lang;
+const t = STRINGS[lang].blog;
+const date = new Intl.DateTimeFormat(lang, { dateStyle: "long", timeZone: "UTC" }).format(post.data.date);
+---
+
+<Base lang={lang} title={post.data.title} description={post.data.summary}>
+  <article>
+    <h1>{post.data.title}</h1>
+    <p class="meta"><time datetime={post.data.date.toISOString().slice(0, 10)}>{date}</time></p>
+    <div class="post-body">
+      <Content />
+    </div>
+  </article>
+  <p><a href={pathFor(lang, "blog")}>← {t.all}</a></p>
+</Base>

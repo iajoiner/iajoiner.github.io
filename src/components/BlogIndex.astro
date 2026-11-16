@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+
+import Base from "../layouts/Base.astro";
+import type { Lang } from "../i18n/languages";
+import { STRINGS } from "../i18n/strings";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = STRINGS[lang].blog;
+const posts = (await getCollection("blog", (p) => !p.data.draft)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const dateFormat = new Intl.DateTimeFormat(lang, { dateStyle: "long", timeZone: "UTC" });
+---
+
+<Base lang={lang} title={t.title} page="blog">
+  <h1>{t.title}</h1>
+  <p class="lead">{t.intro}</p>
+  {
+    posts.length === 0 ? (
+      <p class="meta">{t.empty}</p>
+    ) : (
+      <ul class="posts">
+        {posts.map((p) => (
+          <li lang={p.data.lang}>
+            <h2 style="margin:0;font-size:1.3rem">
+              <a href={`/blog/${p.id}/`}>{p.data.title}</a>
+            </h2>
+            <p class="meta" lang={lang}>
+              <time datetime={p.data.date.toISOString().slice(0, 10)}>{dateFormat.format(p.data.date)}</time>
+              {p.data.lang !== lang && <> · {t.writtenIn[p.data.lang]}</>}
+            </p>
+            {p.data.summary && <p style="margin:0.3rem 0 0">{p.data.summary}</p>}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Base>

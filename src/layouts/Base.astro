@@ -1,0 +1,76 @@
+---
+import "../styles/global.css";
+import { LANG_NAMES, LANGS, pathFor, type Lang, type Page } from "../i18n/languages";
+import { STRINGS } from "../i18n/strings";
+
+interface Props {
+  lang: Lang;
+  title: string;
+  /** Which page this is, for the navigation and the language links; absent on a blog post. */
+  page?: Page;
+  description?: string;
+}
+
+const { lang, title, page, description } = Astro.props;
+const t = STRINGS[lang];
+const pageTitle = title === "Ian Alexander Joiner" ? title : `${title} · Ian Alexander Joiner`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description ?? t.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {page && LANGS.map((l) => <link rel="alternate" hreflang={l} href={new URL(pathFor(l, page), Astro.site)} />)}
+    {page && <link rel="alternate" hreflang="x-default" href={new URL(pathFor("en", page), Astro.site)} />}
+    <link rel="alternate" type="application/rss+xml" title="Ian Alexander Joiner: Blog" href="/rss.xml" />
+  </head>
+  <body>
+    <a class="skip" href="#main">{t.skip}</a>
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href={pathFor(lang, "home")}>Ian Alexander Joiner</a>
+        <nav aria-label={t.siteNav}>
+          <ul>
+            {
+              (["home", "blog", "cats"] as const).map((p) => (
+                <li>
+                  <a href={pathFor(lang, p)} aria-current={page === p ? "page" : undefined}>
+                    {t.nav[p]}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="wrap">
+      <slot />
+    </main>
+    <footer class="site">
+      <div class="wrap">
+        {lang !== "en" && <p class="mt-note">{t.machineTranslated}</p>}
+        <nav aria-label={t.languages}>
+          <ul>
+            {
+              LANGS.map((l) => (
+                <li>
+                  <a href={pathFor(l, page ?? "blog")} lang={l} hreflang={l} aria-current={l === lang ? "true" : undefined}>
+                    {LANG_NAMES[l]}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        <p>© {new Date().getFullYear()} Ian Alexander Joiner · <a href="https://github.com/iajoiner">GitHub</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
