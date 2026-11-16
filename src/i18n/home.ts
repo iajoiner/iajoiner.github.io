@@ -62,7 +62,8 @@ export interface HomeContent {
   orgs: Record<OrgKey, string>;
   countriesTitle: string;
   countriesIntro: string;
-  countries: { name: string; points: string[] }[];
+  /** `personal` is my own experience of the place, shown before the reasons. */
+  countries: { name: string; personal?: string; points: string[] }[];
   rootsTitle: string;
   roots: string[];
 }
@@ -75,7 +76,7 @@ export const HOME: Record<Lang, HomeContent> = {
     favLanguage: "Favorite programming language",
     favOs: "Favorite operating system",
     intro: "I follow Christ, write code and look after cats.",
-    bio: "I earned my Ph.D. in mathematics at Brandeis University in 2019. I worked at Lowe's as a data scientist and then senior data scientist, and from 2022 to 2026 at MakeInfinite as a lead and then staff software engineer, mostly on [Space and Time](https://www.spaceandtime.io), especially [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql) and blockchain indexing. In open source, I added the ORC writer to [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html) (C++ and Python) and [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html) to pandas. I'm an enrolled agent, licensed by the IRS to represent taxpayers, and I run the organizations below.",
+    bio: "I earned my Ph.D. in mathematics at Brandeis University in 2019. From 2019 to 2022 I worked at Lowe's as a data scientist and then senior data scientist, and from 2022 to 2026 at [MakeInfinite](https://www.makeinfinite.com/) as a lead and then staff software engineer, mostly on [Space and Time](https://www.spaceandtime.io), especially [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql) and blockchain indexing. In open source, I added the [ORC](https://orc.apache.org/) writer to [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html) (C++ and Python) and [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html) to pandas. I'm an enrolled agent, licensed by the IRS to represent taxpayers, and I run the organizations below.",
     orgsTitle: "Organizations",
     orgs: {
       gideon:
@@ -93,6 +94,8 @@ export const HOME: Record<Lang, HomeContent> = {
     countries: [
       {
         name: "The Nordic countries",
+        personal:
+          "I spent two weeks in Finland, from Helsinki and Vantaa up to Haapavesi, Oulu and Tornio. Very nice, clean and quiet. I love Hesburger, Fazer, lohikeitto and salmiakki, even Tyrkisk Peber.",
         points: [
           "Sweden's Riksdag gave peasants an estate of their own for over four hundred years, when most of Europe gave farmers no voice at all.",
           "Sweden never had serfdom, and neither did most of Finland. The exception was Old Finland, the southeast Russia took in the 1700s, where peasants on lands granted to Russian nobles were pushed close to serfdom.",
@@ -103,6 +106,8 @@ export const HOME: Record<Lang, HomeContent> = {
       },
       {
         name: "Estonia",
+        personal:
+          "I went to Tallinn, to the Nurri cat café, Nautica and Keskturg, then took a bus to Kuressaare and welcomed 2023 there with locals.",
         points: [
           "Skype was built by Estonian engineers, and Bolt was founded in Tallinn.",
           "A truly digital state: one ID card to sign, vote and file taxes online, and e-Residency open to the world.",
@@ -110,6 +115,8 @@ export const HOME: Record<Lang, HomeContent> = {
       },
       {
         name: "Poland",
+        personal:
+          "I first stayed in Kolbuszowa for a sad visit to the memorial at Bełżec, and found a beautiful, calm, modern Galicia. Later I stayed at Miła 15 in Muranów, visited POLIN and the Palace of Culture and Science (PKiN), and enjoyed Żabka and Biedronka. I love PKP trains and Warsaw's trams.",
         points: [
           "Poles kept their faith in Christ through decades of communist rule imposed from outside.",
           "Modern Warsaw, crowned by Varso Tower, the tallest building in the European Union.",
@@ -131,7 +138,7 @@ export const HOME: Record<Lang, HomeContent> = {
     favLanguage: "Lenguaje de programación favorito",
     favOs: "Sistema operativo favorito",
     intro: "Sigo a Cristo, escribo código y cuido gatos.",
-    bio: "Me doctoré en Matemáticas en la Universidad Brandeis en 2019. Trabajé en Lowe's como científico de datos y después científico de datos sénior, y de 2022 a 2026 en MakeInfinite como ingeniero de software líder y después staff, sobre todo en [Space and Time](https://www.spaceandtime.io), en particular en [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql) y en la indexación de blockchains. En código abierto, añadí el escritor ORC a [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html) (C++ y Python) y [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html) a pandas. Soy enrolled agent, habilitado por el IRS para representar a contribuyentes, y dirijo las organizaciones de abajo.",
+    bio: "Me doctoré en Matemáticas en la Universidad Brandeis en 2019. De 2019 a 2022 trabajé en Lowe's como científico de datos y después científico de datos sénior, y de 2022 a 2026 en [MakeInfinite](https://www.makeinfinite.com/) como ingeniero de software líder y después staff, sobre todo en [Space and Time](https://www.spaceandtime.io), en particular en [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql) y en la indexación de blockchains. En código abierto, añadí el escritor de [ORC](https://orc.apache.org/) a [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html) (C++ y Python) y [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html) a pandas. Soy enrolled agent, habilitado por el IRS para representar a contribuyentes, y dirijo las organizaciones de abajo.",
     orgsTitle: "Organizaciones",
     orgs: {
       gideon:
@@ -149,6 +156,8 @@ export const HOME: Record<Lang, HomeContent> = {
     countries: [
       {
         name: "Los países nórdicos",
+        personal:
+          "Pasé dos semanas en Finlandia, de Helsinki y Vantaa a Haapavesi, Oulu y Tornio. Muy agradable, limpia y tranquila. Me encantan Hesburger, Fazer, la lohikeitto (sopa de salmón) y el salmiakki, incluso el Tyrkisk Peber.",
         points: [
           "El Riksdag sueco dio a los campesinos su propio estamento durante más de cuatrocientos años, cuando en casi toda Europa los agricultores no tenían voz.",
           "Suecia nunca tuvo servidumbre, y tampoco la mayor parte de Finlandia. La excepción fue la Vieja Finlandia, el sureste que Rusia tomó en el siglo XVIII, donde los campesinos de las tierras concedidas a nobles rusos quedaron muy cerca de la servidumbre.",
@@ -159,6 +168,8 @@ export const HOME: Record<Lang, HomeContent> = {
       },
       {
         name: "Estonia",
+        personal:
+          "Fui a Tallin, al café de gatos Nurri, a Nautica y al Keskturg, el mercado central; luego tomé un autobús a Kuressaare y recibí allí el 2023 con gente del lugar.",
         points: [
           "Skype lo construyeron ingenieros estonios, y Bolt nació en Tallin.",
           "Un Estado verdaderamente digital: una sola tarjeta de identidad para firmar, votar y declarar impuestos por internet, y la e-Residency abierta a todo el mundo.",
@@ -166,6 +177,8 @@ export const HOME: Record<Lang, HomeContent> = {
       },
       {
         name: "Polonia",
+        personal:
+          "Primero me alojé en Kolbuszowa para una triste visita al memorial de Bełżec, y encontré una Galitzia moderna, hermosa y tranquila. Más tarde me alojé en Miła 15, en Muranów, visité POLIN y el Palacio de la Cultura y la Ciencia (PKiN), y disfruté de Żabka y Biedronka. Me encantan los trenes de PKP y los tranvías de Varsovia.",
         points: [
           "Los polacos conservaron su fe en Cristo durante décadas de un régimen comunista impuesto desde fuera.",
           "La Varsovia moderna, coronada por la torre Varso, el edificio más alto de la Unión Europea.",
@@ -187,7 +200,7 @@ export const HOME: Record<Lang, HomeContent> = {
     favLanguage: "Favoritprogrammeringsspråk",
     favOs: "Favoritoperativsystem",
     intro: "Jag följer Kristus, skriver kod och tar hand om katter.",
-    bio: "Jag tog doktorsexamen i matematik vid Brandeis University 2019. Jag arbetade på Lowe's som data scientist och sedan senior data scientist, och 2022–2026 på MakeInfinite som lead och sedan staff software engineer, mest med [Space and Time](https://www.spaceandtime.io), särskilt [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql) och indexering av blockkedjor. Inom öppen källkod lade jag till ORC-skrivaren i [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html) (C++ och Python) och [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html) i pandas. Jag är enrolled agent, auktoriserad av IRS att företräda skattebetalare, och jag driver organisationerna nedan.",
+    bio: "Jag tog doktorsexamen i matematik vid Brandeis University 2019. 2019–2022 arbetade jag på Lowe's som data scientist och sedan senior data scientist, och 2022–2026 på [MakeInfinite](https://www.makeinfinite.com/) som lead och sedan staff software engineer, mest med [Space and Time](https://www.spaceandtime.io), särskilt [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql) och indexering av blockkedjor. Inom öppen källkod lade jag till skrivaren för [ORC](https://orc.apache.org/) i [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html) (C++ och Python) och [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html) i pandas. Jag är enrolled agent, auktoriserad av IRS att företräda skattebetalare, och jag driver organisationerna nedan.",
     orgsTitle: "Organisationer",
     orgs: {
       gideon:
@@ -205,6 +218,8 @@ export const HOME: Record<Lang, HomeContent> = {
     countries: [
       {
         name: "Norden",
+        personal:
+          "Jag tillbringade två veckor i Finland, från Helsingfors och Vanda upp till Haapavesi, Uleåborg och Torneå. Väldigt trevligt, rent och lugnt. Jag älskar Hesburger, Fazer, laxsoppa och salmiak, till och med Tyrkisk Peber.",
         points: [
           "Sveriges riksdag gav bönderna ett eget stånd i över fyrahundra år, när bönder i större delen av Europa saknade röst.",
           "Sverige hade aldrig livegenskap, och inte heller större delen av Finland. Undantaget var Gamla Finland, den sydöstra del som Ryssland tog på 1700-talet, där bönderna på jord som skänkts till ryska adelsmän trycktes ned nära livegenskap.",
@@ -215,6 +230,8 @@ export const HOME: Record<Lang, HomeContent> = {
       },
       {
         name: "Estland",
+        personal:
+          "Jag åkte till Tallinn, till kattkaféet Nurri, Nautica och Keskturg, centralmarknaden, och tog sedan bussen till Kuressaare och firade in 2023 där med lokalbor.",
         points: [
           "Skype byggdes av estniska ingenjörer, och Bolt grundades i Tallinn.",
           "En verkligt digital stat: ett id-kort för att signera, rösta och deklarera på nätet, och e-residens öppen för hela världen.",
@@ -222,6 +239,8 @@ export const HOME: Record<Lang, HomeContent> = {
       },
       {
         name: "Polen",
+        personal:
+          "Först bodde jag i Kolbuszowa för ett sorgligt besök vid minnesplatsen i Bełżec, och fann ett vackert, lugnt och modernt Galizien. Senare bodde jag på Miła 15 i Muranów, besökte POLIN och Kultur- och vetenskapspalatset (PKiN), och njöt av Żabka och Biedronka. Jag älskar PKP:s tåg och spårvagnarna i Warszawa.",
         points: [
           "Polackerna höll fast vid sin tro på Kristus genom årtionden av kommunistiskt styre som tvingats på dem utifrån.",
           "Det moderna Warszawa, krönt av Varso Tower, Europeiska unionens högsta byggnad.",
@@ -243,7 +262,7 @@ export const HOME: Record<Lang, HomeContent> = {
     favLanguage: "Lempiohjelmointikieli",
     favOs: "Lempikäyttöjärjestelmä",
     intro: "Seuraan Kristusta, kirjoitan koodia ja pidän huolta kissoista.",
-    bio: "Valmistuin matematiikan tohtoriksi Brandeisin yliopistosta vuonna 2019. Työskentelin Lowe'silla data scientistina ja sitten senior data scientistina sekä vuosina 2022–2026 MakeInfinitellä lead- ja sitten staff-ohjelmistoinsinöörinä, enimmäkseen [Space and Time](https://www.spaceandtime.io) -projektissa, erityisesti [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql):n ja lohkoketjujen indeksoinnin parissa. Avoimessa lähdekoodissa lisäsin ORC-kirjoittimen [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html)'hun (C++ ja Python) ja [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html)-funktion pandasiin. Olen enrolled agent eli IRS:n valtuuttama veroasiamies, joka voi edustaa veronmaksajia, ja johdan alla olevia organisaatioita.",
+    bio: "Valmistuin matematiikan tohtoriksi Brandeisin yliopistosta vuonna 2019. Vuosina 2019–2022 työskentelin Lowe'silla data scientistina ja sitten senior data scientistina sekä vuosina 2022–2026 [MakeInfinite](https://www.makeinfinite.com/)llä lead- ja sitten staff-ohjelmistoinsinöörinä, enimmäkseen [Space and Time](https://www.spaceandtime.io) -projektissa, erityisesti [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql):n ja lohkoketjujen indeksoinnin parissa. Avoimessa lähdekoodissa lisäsin [ORC](https://orc.apache.org/)-kirjoittimen [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html)'hun (C++ ja Python) ja [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html)-funktion pandasiin. Olen enrolled agent eli IRS:n valtuuttama veroasiamies, joka voi edustaa veronmaksajia, ja johdan alla olevia organisaatioita.",
     orgsTitle: "Organisaatiot",
     orgs: {
       gideon:
@@ -261,6 +280,8 @@ export const HOME: Record<Lang, HomeContent> = {
     countries: [
       {
         name: "Pohjoismaat",
+        personal:
+          "Vietin kaksi viikkoa Suomessa, Helsingistä ja Vantaalta Haapavedelle, Ouluun ja Tornioon. Todella mukavaa, siistiä ja hiljaista. Rakastan Hesburgeria, Fazeria, lohikeittoa ja salmiakkia, jopa Tyrkisk Peberiä.",
         points: [
           "Ruotsin valtiopäivillä talonpojilla oli oma säätynsä yli neljänsadan vuoden ajan, kun suurimmassa osassa Eurooppaa talonpojilla ei ollut lainkaan ääntä.",
           "Ruotsissa ei koskaan ollut maaorjuutta, eikä myöskään suurimmassa osassa Suomea. Poikkeus oli Vanha Suomi, Venäjän 1700-luvulla valtaama kaakkoinen alue, jossa venäläisille aatelisille lahjoitettujen maiden talonpojat painettiin lähelle maaorjuutta.",
@@ -271,6 +292,8 @@ export const HOME: Record<Lang, HomeContent> = {
       },
       {
         name: "Viro",
+        personal:
+          "Kävin Tallinnassa kissakahvila Nurrissa, Nauticassa ja Keskturgilla, keskustorilla. Sitten menin bussilla Kuressaareen ja juhlin siellä uutta vuotta 2023 paikallisten kanssa.",
         points: [
           "Skypen rakensivat virolaiset insinöörit, ja Bolt perustettiin Tallinnassa.",
           "Todella digitaalinen valtio: yhdellä henkilökortilla allekirjoitetaan, äänestetään ja tehdään veroilmoitus verkossa, ja e-residenssi on avoin koko maailmalle.",
@@ -278,6 +301,8 @@ export const HOME: Record<Lang, HomeContent> = {
       },
       {
         name: "Puola",
+        personal:
+          "Ensin yövyin Kolbuszowassa, kun tein surullisen vierailun Bełżecin muistomerkille, ja löysin kauniin, rauhallisen ja modernin Galitsian. Myöhemmin asuin osoitteessa Miła 15 Muranówissa, kävin POLINissa ja Kulttuuri- ja tiedepalatsissa (PKiN) ja nautin Żabkasta ja Biedronkasta. Rakastan PKP:n junia ja Varsovan raitiovaunuja.",
         points: [
           "Puolalaiset säilyttivät uskonsa Kristukseen vuosikymmenten ajan ulkoa pakotetun kommunistisen vallan alla.",
           "Moderni Varsova, jonka kruunaa Varso Tower, Euroopan unionin korkein rakennus.",

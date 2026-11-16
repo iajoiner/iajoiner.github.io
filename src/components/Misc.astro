@@ -29,6 +29,7 @@ const title = STRINGS[lang].nav.misc;
               <Flag code={f} label={FLAG_NAMES[lang][f]} />
             ))}
           </p>
+          {c.personal && <p class="personal">{c.personal}</p>}
           <ul>
             {c.points.map((p) => (
               <li>{p}</li>

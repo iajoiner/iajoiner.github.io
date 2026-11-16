@@ -349,3 +349,7 @@ a code {
   display: inline-block;
   color: var(--accent);
 }
+.personal {
+  font-style: italic;
+  margin: 0.5rem 0 0.4rem;
+}
