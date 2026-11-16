@@ -311,3 +311,25 @@ footer.site p {
   flex-wrap: wrap;
   gap: 0.4rem 1.5rem;
 }
+.hero-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.hero-head h1 {
+  margin: 0;
+}
+.face {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  background: var(--accent);
+  flex: none;
+}
+.nowrap {
+  white-space: nowrap;
+}

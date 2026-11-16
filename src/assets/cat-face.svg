@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="A cat">
+  <circle cx="60" cy="60" r="60" fill="#0b4ea2"/>
+  <!-- head and ears -->
+  <path d="M28 40 L34 14 L52 32 Q60 30 68 32 L86 14 L92 40 Q98 54 96 66 Q92 94 60 96 Q28 94 24 66 Q22 54 28 40 Z" fill="#fff"/>
+  <path d="M36 22 L40 34 L46 30 Z M84 22 L80 34 L74 30 Z" fill="#cfe0f7"/>
+  <!-- eyes -->
+  <ellipse cx="46" cy="58" rx="6" ry="8" fill="#0b4ea2"/>
+  <ellipse cx="74" cy="58" rx="6" ry="8" fill="#0b4ea2"/>
+  <circle cx="48" cy="55" r="2" fill="#fff"/>
+  <circle cx="76" cy="55" r="2" fill="#fff"/>
+  <!-- nose, mouth, whiskers -->
+  <path d="M56 70 L64 70 L60 75 Z" fill="#e58aa0"/>
+  <path d="M60 75 Q60 81 54 81 M60 75 Q60 81 66 81" stroke="#0b4ea2" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M40 72 L18 68 M40 76 L18 78 M80 72 L102 68 M80 76 L102 78" stroke="#0b4ea2" stroke-width="2" stroke-linecap="round"/>
+</svg>

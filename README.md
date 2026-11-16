@@ -43,6 +43,12 @@ work. The build makes small copies for the gallery and a larger one for
 clicking, so phone photos are fine as they are. Check photos for location
 data you don't want public: GitHub stores the originals in the repository.
 
+## My face
+
+The face at the top of the home page is a cat. Put a photo named
+`face.jpg` (or `face.png`, `face.webp`) in `src/assets/cats/` and it
+replaces the drawn cat; it's cropped to a circle.
+
 ## Change the words
 
 - Home page, all four languages: `src/i18n/home.ts`

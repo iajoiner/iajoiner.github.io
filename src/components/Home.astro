@@ -13,6 +13,7 @@ import haapavesi from "../assets/orgs/haapavesi.svg";
 import lumenary from "../assets/orgs/lumenary.svg";
 import omh from "../assets/orgs/omh.png";
 import pcg from "../assets/orgs/pcg.png";
+import drawnCat from "../assets/cat-face.svg";
 
 interface Props {
   lang: Lang;
@@ -21,12 +22,19 @@ interface Props {
 const { lang } = Astro.props;
 const h = HOME[lang];
 const ICONS: Record<OrgKey, ImageMetadata> = { gideon, omh, lumenary, pcg, haapavesi, coauthored };
+
+/** My face is a cat: src/assets/cats/face.jpg (or .png, .webp) once there is one, a drawn cat until then. */
+const faces = import.meta.glob<{ default: ImageMetadata }>("../assets/cats/face.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG}", { eager: true });
+const face = Object.values(faces)[0]?.default ?? drawnCat;
 ---
 
 <Base lang={lang} title="Ian Alexander Joiner" page="home">
   <section class="hero" aria-labelledby="name">
-    <h1 id="name">Ian Alexander Joiner</h1>
-    <p class="tagline"><span lang="en">Christ, Code, Cats.</span> <Emoji e="✝️" /> <Emoji e="🐧" /> <Emoji e="🐈" /></p>
+    <div class="hero-head">
+      <Image src={face} alt="" width={128} height={128} class="face" loading="eager" />
+      <h1 id="name">Ian Alexander Joiner</h1>
+    </div>
+    <p class="tagline"><span lang="en">Christ, Code, Cats.</span> <span class="nowrap"><Emoji e="✝️" /> <Emoji e="🐧" /> <Emoji e="🐈" /></span></p>
     {h.taglineGloss && <p class="gloss">{h.taglineGloss}</p>}
     <p class="motto" lang="fi">Usko, toivo, rakkaus.</p>
     <p class="gloss">{h.mottoGloss}</p>
