@@ -6,7 +6,7 @@ import Base from "../layouts/Base.astro";
 import CrossMark from "./CrossMark.astro";
 import Emoji from "./Emoji.astro";
 import RichText from "./RichText.astro";
-import { HOME, ORGS, type OrgKey } from "../i18n/home";
+import { HOME, ORG_PROJECTS, ORGS, type OrgKey } from "../i18n/home";
 import { STRINGS } from "../i18n/strings";
 import type { Lang } from "../i18n/languages";
 import coauthored from "../assets/orgs/coauthored.svg";
@@ -61,6 +61,15 @@ const face = Object.values(faces)[0]?.default ?? drawnCat;
               <h3>{o.name}</h3>
             </div>
             <p>{h.orgs[o.key]}</p>
+            {ORG_PROJECTS[o.key] && (
+              <ul class="projects">
+                {ORG_PROJECTS[o.key]!.map((pr) => (
+                  <li>
+                    <a href={pr.href}>{pr.name}</a>: {h.projects[pr.key]}
+                  </li>
+                ))}
+              </ul>
+            )}
             <p class="links">
               {o.links.map((l) => (
                 <a href={l.href}>{l.label}</a>

@@ -36,6 +36,20 @@ export const ORGS = [
 
 export type OrgKey = (typeof ORGS)[number]["key"];
 
+/** Example projects shown under an organization (live sites only). */
+export const ORG_PROJECTS: Partial<Record<OrgKey, { key: ProjectKey; name: string; href: string }[]>> = {
+  omh: [
+    { key: "agape", name: "Agape", href: "https://agape.openmissionofhope.org" },
+    { key: "addresses", name: "Community Addresses", href: "https://communityaddresses.org" },
+    { key: "ebola", name: "Ebola Watch", href: "https://ebolawatch.openmissionofhope.org" },
+    { key: "maisha", name: "Maisha", href: "https://maisha.work" },
+    { key: "cassava", name: "Cassava wetting", href: "https://cassava.live" },
+    { key: "heartbeat", name: "Heartbeat", href: "https://heartbeat.openmissionofhope.org" },
+  ],
+};
+
+export type ProjectKey = "agape" | "addresses" | "ebola" | "maisha" | "cassava" | "heartbeat";
+
 /** The flags shown with each country section, in the order of `countries` below. */
 export const COUNTRY_FLAGS: FlagCode[][] = [["dk", "fi", "is", "no", "se"], ["ee"], ["pl"]];
 
@@ -60,6 +74,7 @@ export interface HomeContent {
   bio: string;
   orgsTitle: string;
   orgs: Record<OrgKey, string>;
+  projects: Record<ProjectKey, string>;
   countriesTitle: string;
   countriesIntro: string;
   /** `personal` is my own experience of the place, shown before the reasons. */
@@ -88,6 +103,14 @@ export const HOME: Record<Lang, HomeContent> = {
       haapavesi: "AI-assisted research in mathematics and science. Its first result: 3×3 Nexus is a win for the first player.",
       coauthored:
         "Coauthored, an open preprint server for papers written with AI co-authors, each with a human author who takes responsibility.",
+    },
+    projects: {
+      agape: "help freely asked, help freely given",
+      addresses: "addresses for buildings that have none, starting in Kampala",
+      ebola: "multilingual Ebola outbreak monitoring",
+      maisha: "life-saving messages for print, SMS and radio",
+      cassava: "processing cassava safely to prevent konzo",
+      heartbeat: "follow-up when someone who asked to be noticed goes quiet (pilot proposed)",
     },
     countriesTitle: "Countries close to my heart",
     countriesIntro: "I have a deep love for the Nordic countries, Estonia and Poland. Here is some of why.",
@@ -151,6 +174,14 @@ export const HOME: Record<Lang, HomeContent> = {
       coauthored:
         "Coauthored, un servidor abierto de preprints para artículos escritos con coautores de IA, cada uno con un autor humano que asume la responsabilidad.",
     },
+    projects: {
+      agape: "ayuda pedida y dada libremente",
+      addresses: "direcciones para edificios que no tienen ninguna, empezando por Kampala",
+      ebola: "seguimiento multilingüe de brotes de ébola",
+      maisha: "mensajes que salvan vidas, para papel, SMS y radio",
+      cassava: "procesar la yuca de forma segura para prevenir el konzo",
+      heartbeat: "seguimiento cuando alguien que pidió ser tenido en cuenta deja de dar señales (piloto propuesto)",
+    },
     countriesTitle: "Países que llevo en el corazón",
     countriesIntro: "Siento un profundo cariño por los países nórdicos, Estonia y Polonia. Estas son algunas razones.",
     countries: [
@@ -213,6 +244,14 @@ export const HOME: Record<Lang, HomeContent> = {
       coauthored:
         "Coauthored, en öppen preprintserver för artiklar skrivna med AI-medförfattare, var och en med en mänsklig författare som tar ansvaret.",
     },
+    projects: {
+      agape: "hjälp som ges och tas emot fritt",
+      addresses: "adresser till byggnader som saknar adress, med början i Kampala",
+      ebola: "flerspråkig bevakning av ebolautbrott",
+      maisha: "livräddande budskap för tryck, sms och radio",
+      cassava: "säker beredning av kassava för att förebygga konzo",
+      heartbeat: "uppföljning när någon som bett om att bli uppmärksammad tystnar (pilot föreslagen)",
+    },
     countriesTitle: "Länder nära mitt hjärta",
     countriesIntro: "Jag har en djup kärlek till de nordiska länderna, Estland och Polen. Här är något av varför.",
     countries: [
@@ -274,6 +313,14 @@ export const HOME: Record<Lang, HomeContent> = {
       haapavesi: "Tekoälyavusteista matematiikan ja luonnontieteiden tutkimusta. Ensimmäinen tulos: 3×3-Nexuksessa aloittaja voittaa.",
       coauthored:
         "Coauthored, avoin preprint-palvelin artikkeleille, joiden kirjoittajina on myös tekoälyjä. Jokaisella artikkelilla on ihmiskirjoittaja, joka kantaa vastuun.",
+    },
+    projects: {
+      agape: "vapaasti pyydettyä ja vapaasti annettua apua",
+      addresses: "osoitteet rakennuksille, joilla ei ole osoitetta, alkaen Kampalasta",
+      ebola: "monikielistä ebolaepidemioiden seurantaa",
+      maisha: "henkeä pelastavia viestejä painettuina, tekstiviesteinä ja radiossa",
+      cassava: "maniokin turvallista käsittelyä konzon ehkäisemiseksi",
+      heartbeat: "seurantaa, kun huomatuksi pyytänyt ihminen hiljenee (pilottia ehdotettu)",
     },
     countriesTitle: "Sydäntäni lähellä olevat maat",
     countriesIntro: "Rakastan syvästi Pohjoismaita, Viroa ja Puolaa. Tässä joitakin syitä.",
