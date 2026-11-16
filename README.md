@@ -1,6 +1,6 @@
 # iajoiner.github.io
 
-Ian Alexander Joiner's personal site: Christ, Code, Cats. Built with
+Ian Alexander Joiner's personal site, https://www.ianjoiner.com: Christ, Code, Cats. Built with
 [Astro](https://astro.build) and published to GitHub Pages by
 `.github/workflows/deploy.yml` on every push to `master`.
 
