@@ -101,7 +101,7 @@ export const HOME: Record<Lang, HomeContent> = {
           "Sweden never had serfdom, and neither did most of Finland. The exception was Old Finland (Vanha Suomi), the southeast Russia took in the 1700s, where peasants on lands granted to Russian nobles were pushed close to serfdom.",
           "No Nordic country ever chose Nazism or communism for itself, and in 1943 Danes ferried nearly all of Denmark's Jews across the sea to safety in Sweden.",
           "Some of the least corrupt and most peaceful societies on earth.",
-          "Housing First in Helsinki: a home first, then help, and homelessness keeps falling.",
+          "Housing First in Helsinki: a home first, then help. Finland cut long-term homelessness by about two-thirds after 2008; since 2024 it has been rising again, a reminder that good institutions need upkeep.",
         ],
       },
       {
@@ -163,7 +163,7 @@ export const HOME: Record<Lang, HomeContent> = {
           "Suecia nunca tuvo servidumbre, y tampoco la mayor parte de Finlandia. La excepción fue la Vieja Finlandia (Vanha Suomi), el sureste que Rusia tomó en el siglo XVIII, donde los campesinos de las tierras concedidas a nobles rusos quedaron muy cerca de la servidumbre.",
           "Ningún país nórdico eligió nunca por sí mismo el nazismo ni el comunismo, y en 1943 los daneses llevaron por mar a casi todos los judíos de Dinamarca a un lugar seguro en Suecia.",
           "Algunas de las sociedades menos corruptas y más pacíficas del mundo.",
-          "Housing First en Helsinki: primero una vivienda, después la ayuda, y el número de personas sin hogar sigue bajando.",
+          "Housing First en Helsinki: primero una vivienda, después la ayuda. Finlandia redujo el sinhogarismo de larga duración en unos dos tercios desde 2008; desde 2024 vuelve a aumentar, un recordatorio de que las buenas instituciones necesitan mantenimiento.",
         ],
       },
       {
@@ -225,7 +225,7 @@ export const HOME: Record<Lang, HomeContent> = {
           "Sverige hade aldrig livegenskap, och inte heller större delen av Finland. Undantaget var Gamla Finland (Vanha Suomi), den sydöstra del som Ryssland tog på 1700-talet, där bönderna på jord som skänkts till ryska adelsmän trycktes ned nära livegenskap.",
           "Inget nordiskt land valde någonsin nazism eller kommunism av egen vilja, och 1943 förde danskarna nästan alla Danmarks judar över havet i säkerhet till Sverige.",
           "Några av världens minst korrumperade och mest fredliga samhällen.",
-          "Bostad först i Helsingfors: först ett hem, sedan hjälp, och hemlösheten fortsätter att minska.",
+          "Bostad först i Helsingfors: först ett hem, sedan hjälp. Finland minskade den långvariga hemlösheten med ungefär två tredjedelar efter 2008; sedan 2024 ökar den igen, en påminnelse om att goda institutioner kräver underhåll.",
         ],
       },
       {
@@ -287,7 +287,7 @@ export const HOME: Record<Lang, HomeContent> = {
           "Ruotsissa ei koskaan ollut maaorjuutta, eikä myöskään suurimmassa osassa Suomea. Poikkeus oli Vanha Suomi, Venäjän 1700-luvulla valtaama kaakkoinen alue, jossa venäläisille aatelisille lahjoitettujen maiden talonpojat painettiin lähelle maaorjuutta.",
           "Yksikään Pohjoismaa ei koskaan itse valinnut natsismia eikä kommunismia, ja vuonna 1943 tanskalaiset veivät lähes kaikki Tanskan juutalaiset meren yli turvaan Ruotsiin.",
           "Joitakin maailman vähiten korruptoituneita ja rauhallisimpia yhteiskuntia.",
-          "Asunto ensin Helsingissä: ensin koti, sitten apu, ja asunnottomuus vähenee yhä.",
+          "Asunto ensin Helsingissä: ensin koti, sitten apu. Suomi vähensi pitkäaikaisasunnottomuutta noin kahdella kolmasosalla vuoden 2008 jälkeen; vuodesta 2024 se on taas kasvanut, mikä muistuttaa, että hyvätkin instituutiot vaativat ylläpitoa.",
         ],
       },
       {
