@@ -11,7 +11,7 @@ export const LANG_NAMES: Record<Lang, string> = {
 
 export const TRANSLATED: readonly Lang[] = ["es", "sv", "fi"];
 
-export type Page = "home" | "blog" | "cats";
+export type Page = "home" | "blog" | "cats" | "misc";
 
 /** The path of a page in a language: English at the root, the others under /es/, /sv/, /fi/. */
 export function pathFor(lang: Lang, page: Page): string {

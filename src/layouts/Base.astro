@@ -38,7 +38,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         <nav aria-label={t.siteNav}>
           <ul>
             {
-              (["home", "blog", "cats"] as const).map((p) => (
+              (["home", "blog", "cats", "misc"] as const).map((p) => (
                 <li>
                   <a href={pathFor(lang, p)} aria-current={page === p ? "page" : undefined}>
                     {t.nav[p]}
@@ -69,7 +69,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
             }
           </ul>
         </nav>
-        <p>© {new Date().getFullYear()} Ian Alexander Joiner · <a href="https://github.com/iajoiner">GitHub</a> <span aria-hidden="true">😺</span></p>
+        <p>© {new Date().getFullYear()} Ian Alexander Joiner · <a href="mailto:ian@gideonsolutions.us">ian@gideonsolutions.us</a> · <a href="https://github.com/iajoiner">GitHub</a> <span aria-hidden="true">😺</span></p>
       </div>
     </footer>
   </body>

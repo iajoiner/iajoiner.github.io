@@ -19,7 +19,7 @@ export const ORGS = [
   },
   {
     key: "lumenary",
-    name: "Lumenary",
+    name: "Lumenary Academy",
     links: [
       { href: "https://lumenary.academy", label: "lumenary.academy" },
       { href: "https://prep.lumenary.academy", label: "prep.lumenary.academy" },
@@ -56,6 +56,8 @@ export interface HomeContent {
   favLanguage: string;
   favOs: string;
   intro: string;
+  /** Education and work, with [links](…) and `code` (see RichText.astro). */
+  bio: string;
   orgsTitle: string;
   orgs: Record<OrgKey, string>;
   countriesTitle: string;
@@ -72,15 +74,15 @@ export const HOME: Record<Lang, HomeContent> = {
     catBro: "Known to my friends, and to every cat on the street, as Cat Bro.",
     favLanguage: "Favorite programming language",
     favOs: "Favorite operating system",
-    intro:
-      "I follow Christ, write code and look after cats. Below are the organizations I work on, the countries close to my heart and my roots. There is also a blog for personal updates and a page of cat photos.",
+    intro: "I follow Christ, write code and look after cats.",
+    bio: "I earned my Ph.D. in mathematics at Brandeis University in 2019. I worked at Lowe's as a data scientist and then senior data scientist, and from 2022 to 2026 at MakeInfinite as a lead and then staff software engineer, mostly on [Space and Time](https://www.spaceandtime.io), especially [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql) and blockchain indexing. In open source, I added the ORC writer to [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html) (C++ and Python) and [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html) to pandas. I'm an enrolled agent, licensed by the IRS to represent taxpayers, and I run the organizations below.",
     orgsTitle: "Organizations",
     orgs: {
       gideon:
         "Honest software for taxes and money: IRS e-filing and more, with prices stated up front and a person behind every product.",
       omh: "A Christian, open-source humanitarian initiative: prayer, knowledge and transparent mercy.",
       lumenary:
-        "Lumenary Academy, a Christian-inspired school in three divisions: Lumenary Scientia teaches the sciences, free and open source for ever, starting with mathematics from counting to graduate level; Lumenary Prep is paid exam preparation, one price per course; Lumenary Lingua, for languages, is on the way.",
+        "A Christian-inspired school. Scientia teaches the sciences, free and open source for ever, starting with mathematics. Prep is paid exam preparation. Lingua, for languages, is coming.",
       pcg: "Games about peace, starring cats: Nexus, Enhanced Go, Cat Chess, Complex Hearts and the mathematics game Quiver Quest.",
       haapavesi: "AI-assisted research in mathematics and science. Its first result: 3×3 Nexus is a win for the first player.",
       coauthored:
@@ -117,7 +119,7 @@ export const HOME: Record<Lang, HomeContent> = {
     ],
     rootsTitle: "Roots",
     roots: [
-      "My Y-chromosome haplogroup is N-L665, a branch of N-P43. I identify as Uralic American: an American with a kinship to the Uralic peoples: the Udmurts, Mari, Khanty, Mansi and Nenets, the Finns, Estonians and Sámi, and their many relatives.",
+      "My Y-chromosome haplogroup is [N-L665](https://www.yfull.com/tree/N-L665/), a branch of N-P43. I identify as Uralic American: an American with a kinship to the Uralic peoples: the Udmurts, Mari, Khanty, Mansi and Nenets, the Finns, Estonians and Sámi, and their many relatives.",
       "A haplogroup follows only one line among many ancestors, so for me it is a thread of heritage and kinship, not a measure of anyone.",
     ],
   },
@@ -128,15 +130,15 @@ export const HOME: Record<Lang, HomeContent> = {
     catBro: "Mis amigos, y todos los gatos de la calle, me conocen como Cat Bro.",
     favLanguage: "Lenguaje de programación favorito",
     favOs: "Sistema operativo favorito",
-    intro:
-      "Sigo a Cristo, escribo código y cuido gatos. Abajo están las organizaciones en las que trabajo, los países que llevo en el corazón y mis raíces. También hay un blog con novedades personales y una página de fotos de gatos.",
+    intro: "Sigo a Cristo, escribo código y cuido gatos.",
+    bio: "Me doctoré en Matemáticas en la Universidad Brandeis en 2019. Trabajé en Lowe's como científico de datos y después científico de datos sénior, y de 2022 a 2026 en MakeInfinite como ingeniero de software líder y después staff, sobre todo en [Space and Time](https://www.spaceandtime.io), en particular en [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql) y en la indexación de blockchains. En código abierto, añadí el escritor ORC a [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html) (C++ y Python) y [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html) a pandas. Soy enrolled agent, habilitado por el IRS para representar a contribuyentes, y dirijo las organizaciones de abajo.",
     orgsTitle: "Organizaciones",
     orgs: {
       gideon:
         "Software honesto para impuestos y dinero: presentación electrónica ante el IRS y más, con precios claros desde el principio y una persona detrás de cada producto.",
       omh: "Una iniciativa humanitaria cristiana y de código abierto: oración, conocimiento y misericordia transparente.",
       lumenary:
-        "Lumenary Academy, una escuela de inspiración cristiana con tres divisiones: Lumenary Scientia enseña las ciencias, gratis y de código abierto para siempre, empezando por las matemáticas, desde contar hasta el nivel de posgrado; Lumenary Prep es preparación de exámenes de pago, con un precio por curso; Lumenary Lingua, para idiomas, está en camino.",
+        "Una escuela de inspiración cristiana. Scientia enseña las ciencias, gratis y de código abierto para siempre, empezando por las matemáticas. Prep es preparación de exámenes de pago. Lingua, para idiomas, está en camino.",
       pcg: "Juegos sobre la paz, protagonizados por gatos: Nexus, Enhanced Go, Cat Chess, Complex Hearts y el juego matemático Quiver Quest.",
       haapavesi: "Investigación en matemáticas y ciencias asistida por IA. Su primer resultado: en Nexus 3×3 gana el primer jugador.",
       coauthored:
@@ -173,7 +175,7 @@ export const HOME: Record<Lang, HomeContent> = {
     ],
     rootsTitle: "Raíces",
     roots: [
-      "Mi haplogrupo del cromosoma Y es N-L665, una rama de N-P43. Me identifico como estadounidense urálico (Uralic American): un estadounidense que siente parentesco con los pueblos urálicos: los udmurtos, los maris, los jantis, los mansis y los nénets, los finlandeses, los estonios y los sami, y sus muchos parientes.",
+      "Mi haplogrupo del cromosoma Y es [N-L665](https://www.yfull.com/tree/N-L665/), una rama de N-P43. Me identifico como estadounidense urálico (Uralic American): un estadounidense que siente parentesco con los pueblos urálicos: los udmurtos, los maris, los jantis, los mansis y los nénets, los finlandeses, los estonios y los sami, y sus muchos parientes.",
       "Un haplogrupo sigue una sola línea entre muchos antepasados, así que para mí es un hilo de herencia y parentesco, no una medida de nadie.",
     ],
   },
@@ -184,15 +186,15 @@ export const HOME: Record<Lang, HomeContent> = {
     catBro: "Mina vänner, och varenda katt på gatan, känner mig som Cat Bro.",
     favLanguage: "Favoritprogrammeringsspråk",
     favOs: "Favoritoperativsystem",
-    intro:
-      "Jag följer Kristus, skriver kod och tar hand om katter. Här nedanför finns organisationerna jag arbetar med, länderna som ligger mitt hjärta nära och mina rötter. Det finns också en blogg med personliga uppdateringar och en sida med kattbilder.",
+    intro: "Jag följer Kristus, skriver kod och tar hand om katter.",
+    bio: "Jag tog doktorsexamen i matematik vid Brandeis University 2019. Jag arbetade på Lowe's som data scientist och sedan senior data scientist, och 2022–2026 på MakeInfinite som lead och sedan staff software engineer, mest med [Space and Time](https://www.spaceandtime.io), särskilt [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql) och indexering av blockkedjor. Inom öppen källkod lade jag till ORC-skrivaren i [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html) (C++ och Python) och [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html) i pandas. Jag är enrolled agent, auktoriserad av IRS att företräda skattebetalare, och jag driver organisationerna nedan.",
     orgsTitle: "Organisationer",
     orgs: {
       gideon:
         "Ärlig programvara för skatter och pengar: e-deklaration till IRS med mera, med priser som anges från början och en människa bakom varje produkt.",
       omh: "Ett kristet humanitärt initiativ med öppen källkod: bön, kunskap och öppen barmhärtighet.",
       lumenary:
-        "Lumenary Academy, en kristet inspirerad skola i tre avdelningar: Lumenary Scientia lär ut naturvetenskap, gratis och med öppen källkod för alltid, med början i matematik från att räkna till forskarnivå; Lumenary Prep är betald provförberedelse, ett pris per kurs; Lumenary Lingua, för språk, är på väg.",
+        "En kristet inspirerad skola. Scientia lär ut naturvetenskap, gratis och med öppen källkod för alltid, med början i matematik. Prep är betald provförberedelse. Lingua, för språk, är på väg.",
       pcg: "Spel om fred, med katter i huvudrollerna: Nexus, Enhanced Go, Cat Chess, Complex Hearts och matematikspelet Quiver Quest.",
       haapavesi: "AI-assisterad forskning i matematik och naturvetenskap. Första resultatet: i 3×3-Nexus vinner den som börjar.",
       coauthored:
@@ -229,7 +231,7 @@ export const HOME: Record<Lang, HomeContent> = {
     ],
     rootsTitle: "Rötter",
     roots: [
-      "Min Y-kromosomhaplogrupp är N-L665, en gren av N-P43. Jag identifierar mig som uralisk amerikan (Uralic American): en amerikan med släktskap med de uraliska folken: udmurter, marier, chanter, mansier och nentser, finnar, ester och samer, och deras många släktingar.",
+      "Min Y-kromosomhaplogrupp är [N-L665](https://www.yfull.com/tree/N-L665/), en gren av N-P43. Jag identifierar mig som uralisk amerikan (Uralic American): en amerikan med släktskap med de uraliska folken: udmurter, marier, chanter, mansier och nentser, finnar, ester och samer, och deras många släktingar.",
       "En haplogrupp följer bara en linje bland många förfäder, så för mig är den en tråd av arv och släktskap, inte ett mått på någon.",
     ],
   },
@@ -240,15 +242,15 @@ export const HOME: Record<Lang, HomeContent> = {
     catBro: "Ystäväni, ja jokainen kadun kissa, tuntevat minut nimellä Cat Bro.",
     favLanguage: "Lempiohjelmointikieli",
     favOs: "Lempikäyttöjärjestelmä",
-    intro:
-      "Seuraan Kristusta, kirjoitan koodia ja pidän huolta kissoista. Alla ovat organisaatiot, joiden parissa työskentelen, sydäntäni lähellä olevat maat ja juureni. Sivustolla on myös blogi henkilökohtaisille kuulumisille ja sivu kissakuville.",
+    intro: "Seuraan Kristusta, kirjoitan koodia ja pidän huolta kissoista.",
+    bio: "Valmistuin matematiikan tohtoriksi Brandeisin yliopistosta vuonna 2019. Työskentelin Lowe'silla data scientistina ja sitten senior data scientistina sekä vuosina 2022–2026 MakeInfinitellä lead- ja sitten staff-ohjelmistoinsinöörinä, enimmäkseen [Space and Time](https://www.spaceandtime.io) -projektissa, erityisesti [Proof of SQL](https://github.com/spaceandtimefdn/sxt-proof-of-sql):n ja lohkoketjujen indeksoinnin parissa. Avoimessa lähdekoodissa lisäsin ORC-kirjoittimen [Apache Arrow](https://arrow.apache.org/docs/python/generated/pyarrow.orc.write_table.html)'hun (C++ ja Python) ja [`to_orc`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_orc.html)-funktion pandasiin. Olen enrolled agent eli IRS:n valtuuttama veroasiamies, joka voi edustaa veronmaksajia, ja johdan alla olevia organisaatioita.",
     orgsTitle: "Organisaatiot",
     orgs: {
       gideon:
         "Rehellisiä ohjelmistoja veroihin ja raha-asioihin: sähköinen veroilmoitus Yhdysvaltain verovirastolle (IRS) ja paljon muuta. Hinnat kerrotaan heti alussa, ja jokaisen tuotteen takana on ihminen.",
       omh: "Kristillinen avoimen lähdekoodin humanitaarinen hanke: rukousta, tietoa ja läpinäkyvää laupeutta.",
       lumenary:
-        "Lumenary Academy, kristillisen inspiraation koulu, jossa on kolme osastoa: Lumenary Scientia opettaa luonnontieteitä maksutta ja avoimena lähdekoodina ikuisesti, alkaen matematiikasta laskemisen alkeista jatko-opintotasolle; Lumenary Prep on maksullista koevalmennusta, yksi hinta kurssia kohden; Lumenary Lingua kielten opetukseen on tulossa.",
+        "Kristillisen inspiraation koulu. Scientia opettaa luonnontieteitä maksutta ja avoimena lähdekoodina ikuisesti, alkaen matematiikasta. Prep on maksullista koevalmennusta. Kielten Lingua on tulossa.",
       pcg: "Pelejä rauhasta, pääosissa kissat: Nexus, Enhanced Go, Cat Chess, Complex Hearts ja matematiikkapeli Quiver Quest.",
       haapavesi: "Tekoälyavusteista matematiikan ja luonnontieteiden tutkimusta. Ensimmäinen tulos: 3×3-Nexuksessa aloittaja voittaa.",
       coauthored:
@@ -285,7 +287,7 @@ export const HOME: Record<Lang, HomeContent> = {
     ],
     rootsTitle: "Juuret",
     roots: [
-      "Y-kromosomihaploryhmäni on N-L665, joka on N-P43:n haara. Koen olevani uralilainen amerikkalainen (Uralic American): amerikkalainen, joka tuntee sukulaisuutta uralilaisiin kansoihin: udmurtteihin, mareihin, hanteihin, manseihin ja nenetseihin, suomalaisiin, virolaisiin ja saamelaisiin sekä heidän moniin sukulaiskansoihinsa.",
+      "Y-kromosomihaploryhmäni on [N-L665](https://www.yfull.com/tree/N-L665/), joka on N-P43:n haara. Koen olevani uralilainen amerikkalainen (Uralic American): amerikkalainen, joka tuntee sukulaisuutta uralilaisiin kansoihin: udmurtteihin, mareihin, hanteihin, manseihin ja nenetseihin, suomalaisiin, virolaisiin ja saamelaisiin sekä heidän moniin sukulaiskansoihinsa.",
       "Haploryhmä seuraa vain yhtä linjaa monien esivanhempien joukossa, joten minulle se on perinnön ja sukulaisuuden lanka, ei kenenkään mittapuu.",
     ],
   },

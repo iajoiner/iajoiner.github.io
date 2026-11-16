@@ -3,9 +3,11 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
 import Base from "../layouts/Base.astro";
+import CrossMark from "./CrossMark.astro";
 import Emoji from "./Emoji.astro";
-import Flag from "./Flag.astro";
-import { COUNTRY_FLAGS, FLAG_NAMES, HOME, ORGS, type OrgKey } from "../i18n/home";
+import RichText from "./RichText.astro";
+import { HOME, ORGS, type OrgKey } from "../i18n/home";
+import { STRINGS } from "../i18n/strings";
 import type { Lang } from "../i18n/languages";
 import coauthored from "../assets/orgs/coauthored.svg";
 import gideon from "../assets/orgs/gideon.svg";
@@ -34,15 +36,17 @@ const face = Object.values(faces)[0]?.default ?? drawnCat;
       <Image src={face} alt="" width={128} height={128} class="face" loading="eager" />
       <h1 id="name">Ian Alexander Joiner</h1>
     </div>
-    <p class="tagline"><span lang="en">Christ, Code, Cats.</span> <span class="nowrap"><Emoji e="✝️" /> <Emoji e="🐧" /> <Emoji e="🐈" /></span></p>
+    <p class="tagline"><span lang="en">Christ, Code, Cats.</span> <span class="nowrap"><CrossMark /> <Emoji e="🐧" /> <Emoji e="🐈" /></span></p>
     {h.taglineGloss && <p class="gloss">{h.taglineGloss}</p>}
     <p class="motto" lang="fi">Usko, toivo, rakkaus.</p>
     <p class="gloss">{h.mottoGloss}</p>
     <p class="lead">{h.intro}</p>
+    <p><RichText text={h.bio} /></p>
     <p class="catbro"><Emoji e="😺" /> {h.catBro} <Emoji e="🐾" /></p>
     <ul class="favorites">
       <li>{h.favLanguage}: <strong>Rust</strong> <Emoji e="🦀" /></li>
-      <li>{h.favOs}: <strong>Linux</strong> <Emoji e="🐧" /></li>
+      <li>{h.favOs}: <strong>Linux</strong></li>
+      <li>{STRINGS[lang].email}: <a href="mailto:ian@gideonsolutions.us">ian@gideonsolutions.us</a></li>
     </ul>
   </section>
 
@@ -68,31 +72,4 @@ const face = Object.values(faces)[0]?.default ?? drawnCat;
     </ul>
   </section>
 
-  <section aria-labelledby="countries">
-    <h2 id="countries">{h.countriesTitle}</h2>
-    <p>{h.countriesIntro}</p>
-    {
-      h.countries.map((c, i) => (
-        <div class="country">
-          <h3>{c.name}</h3>
-          <p class="flags">
-            {(COUNTRY_FLAGS[i] ?? []).map((f) => (
-              <Flag code={f} label={FLAG_NAMES[lang][f]} />
-            ))}
-          </p>
-          <ul>
-            {c.points.map((p) => (
-              <li>{p}</li>
-            ))}
-          </ul>
-        </div>
-      ))
-    }
-  </section>
-
-  <section aria-labelledby="roots">
-    <h2 id="roots">{h.rootsTitle}</h2>
-    <p class="flags"><Flag code="us" label={FLAG_NAMES[lang].us} /></p>
-    {h.roots.map((r) => <p>{r}</p>)}
-  </section>
 </Base>

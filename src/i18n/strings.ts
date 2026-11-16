@@ -2,10 +2,11 @@ import type { Lang } from "./languages";
 
 /** Words of the site's frame (navigation, cats page, blog), per language. */
 export interface Strings {
-  nav: { home: string; blog: string; cats: string };
+  nav: { home: string; blog: string; cats: string; misc: string };
   languages: string;
   siteNav: string;
   skip: string;
+  email: string;
   machineTranslated: string;
   description: string;
   cats: {
@@ -27,9 +28,10 @@ export interface Strings {
 
 export const STRINGS: Record<Lang, Strings> = {
   en: {
-    nav: { home: "Home", blog: "Blog", cats: "Cats" },
+    nav: { home: "Home", blog: "Blog", cats: "Cats", misc: "Miscellaneous" },
     languages: "Languages",
     siteNav: "Site",
+    email: "Email",
     skip: "Skip to content",
     machineTranslated: "",
     description: "Ian Alexander Joiner: Christ, Code, Cats. Organizations, a blog and cat photos.",
@@ -50,9 +52,10 @@ export const STRINGS: Record<Lang, Strings> = {
     },
   },
   es: {
-    nav: { home: "Inicio", blog: "Blog", cats: "Gatos" },
+    nav: { home: "Inicio", blog: "Blog", cats: "Gatos", misc: "Miscelánea" },
     languages: "Idiomas",
     siteNav: "Sitio",
+    email: "Correo",
     skip: "Ir al contenido",
     machineTranslated: "Traducción automática del inglés hecha por Claude (una IA). Las páginas en inglés son el original.",
     description: "Ian Alexander Joiner: Cristo, código, gatos. Organizaciones, un blog y fotos de gatos.",
@@ -73,9 +76,10 @@ export const STRINGS: Record<Lang, Strings> = {
     },
   },
   sv: {
-    nav: { home: "Hem", blog: "Blogg", cats: "Katter" },
+    nav: { home: "Hem", blog: "Blogg", cats: "Katter", misc: "Övrigt" },
     languages: "Språk",
     siteNav: "Webbplats",
+    email: "E-post",
     skip: "Hoppa till innehållet",
     machineTranslated: "Maskinöversatt från engelska av Claude (en AI). De engelska sidorna är originalet.",
     description: "Ian Alexander Joiner: Kristus, kod, katter. Organisationer, en blogg och kattbilder.",
@@ -96,9 +100,10 @@ export const STRINGS: Record<Lang, Strings> = {
     },
   },
   fi: {
-    nav: { home: "Etusivu", blog: "Blogi", cats: "Kissat" },
+    nav: { home: "Etusivu", blog: "Blogi", cats: "Kissat", misc: "Sekalaista" },
     languages: "Kielet",
     siteNav: "Sivusto",
+    email: "Sähköposti",
     skip: "Siirry sisältöön",
     machineTranslated: "Claude-tekoälyn konekääntämä englannista. Englanninkieliset sivut ovat alkuperäiset.",
     description: "Ian Alexander Joiner: Kristus, koodi, kissat. Organisaatiot, blogi ja kissakuvia.",

@@ -333,3 +333,19 @@ footer.site p {
 .nowrap {
   white-space: nowrap;
 }
+.cross-mark {
+  height: 1em;
+  width: auto;
+  vertical-align: -0.12em;
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--accent-soft);
+  padding: 0.05em 0.3em;
+  border-radius: 4px;
+}
+a code {
+  display: inline-block;
+  color: var(--accent);
+}

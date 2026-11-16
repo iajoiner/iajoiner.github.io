@@ -1,0 +1,30 @@
+---
+/**
+ * A sentence with [links](https://…) and `code`, written that way in the
+ * translation files so translators can move them within the sentence.
+ */
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+type Part = { kind: "text"; s: string } | { kind: "link"; s: string; href: string } | { kind: "code"; s: string };
+const parts: Part[] = [];
+const re = /\[([^\]]+)\]\(([^)]+)\)|`([^`]+)`/g;
+let last = 0;
+for (const m of text.matchAll(re)) {
+  if (m.index > last) parts.push({ kind: "text", s: text.slice(last, m.index) });
+  if (m[3] !== undefined) parts.push({ kind: "code", s: m[3] });
+  else parts.push({ kind: "link", s: m[1] ?? "", href: m[2] ?? "" });
+  last = m.index + m[0].length;
+}
+if (last < text.length) parts.push({ kind: "text", s: text.slice(last) });
+---
+
+{
+  parts.map((p) => {
+    if (p.kind === "code") return <code>{p.s}</code>;
+    if (p.kind === "text") return p.s;
+    const code = /^`([^`]+)`$/.exec(p.s);
+    return <a href={p.href}>{code ? <code>{code[1]}</code> : p.s}</a>;
+  })
+}

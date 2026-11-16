@@ -1,0 +1,47 @@
+---
+import Base from "../layouts/Base.astro";
+import Flag from "./Flag.astro";
+import RichText from "./RichText.astro";
+import { COUNTRY_FLAGS, FLAG_NAMES, HOME } from "../i18n/home";
+import type { Lang } from "../i18n/languages";
+import { STRINGS } from "../i18n/strings";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const h = HOME[lang];
+const title = STRINGS[lang].nav.misc;
+---
+
+<Base lang={lang} title={title} page="misc">
+  <h1>{title}</h1>
+  <section aria-labelledby="countries">
+    <h2 id="countries">{h.countriesTitle}</h2>
+    <p>{h.countriesIntro}</p>
+    {
+      h.countries.map((c, i) => (
+        <div class="country">
+          <h3>{c.name}</h3>
+          <p class="flags">
+            {(COUNTRY_FLAGS[i] ?? []).map((f) => (
+              <Flag code={f} label={FLAG_NAMES[lang][f]} />
+            ))}
+          </p>
+          <ul>
+            {c.points.map((p) => (
+              <li>{p}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+
+  <section aria-labelledby="roots">
+    <h2 id="roots">{h.rootsTitle}</h2>
+    <p class="flags"><Flag code="us" label={FLAG_NAMES[lang].us} /></p>
+    {h.roots.map((r) => <p><RichText text={r} /></p>)}
+  </section>
+</Base>
